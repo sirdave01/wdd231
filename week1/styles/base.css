@@ -1,0 +1,70 @@
+/* _________________________***COLOR SCHEME***_______________________________
+
+ GOLD: #FFD700.
+ Royal Blue: #4169e1
+
+*/
+
+/* __________________________***SITE WIDE***__________________________________ */
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+/* __________________________***HEADER***__________________________________ */
+
+header {
+    display: grid;
+    grid-template-columns: 24px auto 44px;
+    padding: 5px 0 5px 10px;
+    border-bottom: solid 1px #ddd;
+    align-items: end;
+    column-gap: 8px;
+}
+
+header img {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-bottom: 5px;
+}
+
+header span {
+    font-size: 1.2rem;
+    color: #4169e1;
+}
+
+/* __________________________***HAMBURGER***__________________________________ */
+
+.hamburger {
+    background: none;
+    border: none;
+    color: #4169e1;
+    cursor: pointer;
+}
+
+.hamburger::before {
+    content: "\2630";
+    font-size: 2rem;
+}
+
+.hamburger.show::before {
+    content: "\00D7";
+    font-size: 2rem;
+}
+
+/* __________________________***NAVIGATION***__________________________________ */
+
+.navigation{
+    display: none;
+
+}
+
+.navigation.show{
+    display: block;
+}
+
+.navigation ul{
+    list-style: none;
+}
