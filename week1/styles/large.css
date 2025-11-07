@@ -10,22 +10,55 @@
 
     header {
         grid-template-columns: 24px auto;
+        gap: 3rem;
+    }
+
+    header span {
+        font-size: 2rem;
     }
 
     .hamburger {
         display: none;
     }
 
-    .navigation{
+    .navigation {
         display: block;
         border-bottom: solid 1px #eee;
     }
 
-    .navigation ul{
+    .navigation ul {
         display: flex;
+        justify-content: space-between;
+        font-size: 1.5rem;
+        padding: 0.5rem;
     }
 
-    .navigation a{
+    .navigation a {
         border-bottom: none;
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-family: roboto;
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    button {
+        font-size: 1.5rem;
+        border-radius: 10px;
+        gap: 10px;
+    }
+
+    .student-photo img {
+        height: auto;
     }
 }
