@@ -61,4 +61,10 @@
     .student-photo img {
         height: auto;
     }
+
+    .socials img {
+        width: 44px;
+        height: 44px;
+        gap: 1rem;
+    }
 }
