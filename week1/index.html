@@ -54,7 +54,7 @@
             HOME
         </h1>
 
-        <section>
+        <section class="about-me">
 
             <h2>About Me</h2>
 
@@ -67,7 +67,7 @@
 
         </section>
 
-        <section>
+        <section class="student-photo">
 
             <h2>Student Photo</h2>
 
@@ -81,14 +81,31 @@
 
         </section>
 
-        <section>
+        <section class="courses">
 
             <h2>Web Certificate Courses</h2>
 
+            <div class="filter-buttons">
+
+                <button id="allCourses">All</button>
+
+                <button id="wddCourses">WDD</button>
+
+                <button id="cseCourses">CSE</button>
+
+            </div>
+
+            <div id="courses-container">
+
+                <!-- javascript will dynamically populate this area with the course cards -->
+            </div>
+
+            <p id="totalCredits">
+
+                <!-- javascript will dynamically populate this area with the course credits -->
+            </p>
+
         </section>
-
-
-
 
     </main>
 
@@ -115,7 +132,10 @@
 
         </div>
 
-        <p><span id="currentyear"></span></p>
+        <p>
+            &copy; <span id="currentyear"></span>
+            Osigwe Uchechukwu DavidCaleb ❤️, Aba, Abia State, Nigeria
+        </p>
 
         <p><span id="lastModified"></span></p>
 
