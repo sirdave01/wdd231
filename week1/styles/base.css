@@ -2,6 +2,7 @@
 
  GOLD: #FFD700.
  Royal Blue: #4169e1
+ Tint grren: #d4edda;
 
 */
 
@@ -25,8 +26,6 @@ header {
 
 header img {
     display: block;
-    width: 100%;
-    height: auto;
     padding-bottom: 5px;
 }
 
@@ -88,12 +87,81 @@ header span {
 }
 
 h1 {
+    font-weight: 700;
+    font-family: lora;
     margin-left: 10px;
     color: #4169e1;
     text-align: center;
 }
 
 /* __________________________***MAIN***__________________________________ */
+
+main {
+    padding: 5px 0 5px 10px;
+    max-width: 100%;
+}
+
+section {
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-weight: 700;
+    font-family: lora;
+    color: #4169e1;
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-weight: 700;
+    font-family: lora;
+    font-size: 1rem;
+}
+
+p {
+    font-family: roboto;
+    color: black;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.about-me,
+.student-photo {
+
+    background-color: #ddd;
+    border: solid 1px #eee;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.student-photo img {
+    display: block;
+    padding-bottom: 5px;
+    object-fit: cover;
+    height: 20rem;
+}
+
+.courses {
+    display: grid;
+    column-gap: 8px;
+}
+
+.course-card {
+    border: solid 1px #eee;
+    padding: 1rem;
+    background-color: #ddd;
+    border-radius: 8px;
+}
+
+.completed {
+    background-color: #d4edda;
+}
 
 button:hover {
     background-color: #FFD700;
