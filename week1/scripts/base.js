@@ -116,3 +116,89 @@ document.addEventListener(`DOMContentLoaded`, function () {
         lastEdited.textContent = `Last Modified: ${new Date().toLocaleString()}`
     }
 })
+
+// wayfinding, creating current class for any active/current page
+
+document.addEventListener(`DOMContentLoaded`, () => {
+
+    const activePage = window.location.pathname.split(`/`).pop() || `index.html`;
+
+    links.forEach(link => {
+        if (link.getAttribute(`href`) === activePage) {
+            link.classList.add(`current`);
+        }
+    });
+});
+
+// dynamically populating the courses into the HTML course cards
+
+let currentCourses = [...courses];
+
+// create and call displayCourses and filterCourses functions and add an eventlistener for the buttons when clicked
+
+function displayCourses(coursesToShow) {
+
+    const container = document.querySelector(`#courses-container`);
+
+    container.innerHTML = ``; //clears the container
+
+    coursesToShow.forEach(course => {
+
+        const card = document.createElement(`article`);
+
+        card.className = `course-card ${course.completed ? `completed` : ``}`;
+
+        card.innerHTML = `
+        <h3> ${course.subject}:${course.number}</h3>
+        <p> Credits: ${course.credits} </p>
+        <p> Title: ${course.title} </p>
+        <p> Certificate: ${course.certificate} </p>
+        <p> Description: ${course.description} </p>
+        <p> Technology: ${course.technology} </p>
+        <span class="status">${course.completed ? `Completed` : `In Progress`}</span>
+        `;
+
+        container.appendChild(card);
+
+    });
+
+    // for the total credits with reduce
+
+    const total = coursesToShow.reduce((sum, course) => sum + course.credits, 0);
+
+    document.querySelector(`#totalCredits`).textContent = `Toral Credits: ${total}`;
+
+
+}
+
+function filterCourses(filterType) {
+
+    switch (filterType) {
+        case `wdd`:
+            currentCourses = courses.filter(c => c.subject.startsWith(`WDD`));
+            break;
+
+        case `cse`:
+            currentCourses = courses.filter(c => c.subject.startsWith(`CSE`));
+            break;
+        default:
+            currentCourses = [...courses];
+    }
+
+    displayCourses(currentCourses);
+}
+
+// eventlistener for the buttons
+
+document.addEventListener(`DOMContentLoaded`, () => {
+
+    document.querySelector(`#allCourses`).addEventListener(`click`, () => filterCourses(`all`));
+
+    document.querySelector(`#wddCourses`).addEventListener(`click`, () => filterCourses(`wdd`));
+
+    document.querySelector(`#cseCourses`).addEventListener(`click`, () => filterCourses(`cse`));
+
+    // initial load
+    displayCourses(currentCourses);
+
+})

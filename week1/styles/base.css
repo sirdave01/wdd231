@@ -84,13 +84,19 @@ header span {
 }
 
 .navigation li#current {
-    background-color: #eee;
+    background-color: #ddd;
 }
 
 h1 {
     margin-left: 10px;
     color: #4169e1;
 }
+
+button:hover {
+    background-color: #FFD700;
+}
+
+/* __________________________***MAIN***__________________________________ */
 
 
 /* __________________________***FOOTER***__________________________________ */
