@@ -166,7 +166,7 @@ function displayCourses(coursesToShow) {
 
     const total = coursesToShow.reduce((sum, course) => sum + course.credits, 0);
 
-    document.querySelector(`#totalCredits`).textContent = `Toral Credits: ${total}`;
+    document.querySelector(`#totalCredits`).textContent = `Total Credits: ${total}`;
 
 
 }
