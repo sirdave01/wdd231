@@ -4,161 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osigwe Uchechukwu David || WDD 231</title>
-    <meta name="description" content="Creating a Responsive website as a review for my new class - wdd231">
-    <meta name="author" content="Osigwe Uchechukwu DavidCaleb">
-    <meta name="keywords" content="Responsive webpage, HTML, CSS, javascript">
-
-
+    <title>Document</title>
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/large.css">
-
-    <script src="scripts/base.js" defer></script>
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Lora:wght@700&display=swap"
-        rel="stylesheet">
-
-    <link rel="android-chrome-512x512" href="images/icons/android-chrome-512x512.png">
-    <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
-    <link rel="icon" href="images/icons/favicon-16x16.png">
-    <link rel="icon" href="images/icons/favicon-32x32.png">
-    <link rel="manifest" href="images/icons/site.webmanifest">
-
+    <script src="scripts/exercise.js" defer></script>
 </head>
 
-<!-- this is the body tag -->
-
 <body>
-
-    <header>
-
-        <img src="images/cross.webp" alt="site logo" width="16" height="16">
-
-        <span>
-            WEB FRONTEND 1 || WDD231
-        </span>
-
-        <button id="nav-btn" class="hamburger"></button>
-
-    </header>
-
-    <!-- this is the nav tag -->
-
-    <nav id="nav-bar" class="navigation">
-
-        <ul>
-
-            <li id="current"><a href="index.html">Home</a></li>
-
-            <li><a href="#">Chamber Commerce</a></li>
-
-            <li><a href="#">Final Project</a></li>
-
-        </ul>
-
-    </nav>
-
-    <!-- this is the main tag -->
-
+    <h1>JavaScript Review Exercise</h1>
+    <p><a href="https://byui-cse.github.io/wdd231-ww-course/week01/prepare-applied-javascript.html" target="_blank">WDD
+            231 Learning Activity</a></p>
+    <aside></aside>
     <main>
-
-        <h1>
-            HOME
-        </h1>
-
-        <section class="about-me">
-
-            <h2>About Me</h2>
-
-            <p>
-                I am Osigwe Uchechukwu DavidCaleb, I hail from Imo state in the Eastern part of Nigeria
-                I am an aspiring Full Stack Programmer with Brigham Young Univerity, Idaho
-                I love the knowledge I'm gaining and have gained from BYU so far...
-                I am happy that I am learning this programming course, it is my dream...
-            </p>
-
-        </section>
-
-        <section class="student-photo">
-
-            <h2>Student Photo</h2>
-
-            <!-- shorthand for making pictures images main>div.hero>picture>source:media*2+img -->
-
-            <picture>
-                <source media="(min-width: 1000px )" srcset="images/dp.webp">
-                <source media="(min-width: 750px )" srcset="images/dp.webp">
-                <img src="images/dp.webp" alt="my photo" width="500" height="250" loading="lazy">
-            </picture>
-
-        </section>
-
-        <section class="courses">
-
-            <h2>Web Certificate Courses</h2>
-
-            <div class="filter-buttons">
-
-                <button id="allCourses">All</button>
-
-                <button id="wddCourses">WDD</button>
-
-                <button id="cseCourses">CSE</button>
-
-            </div>
-
-            <p id="totalCredits">
-
-                <!-- javascript will dynamically populate this area with the course credits -->
-            </p>
-
-            <div id="courses-container">
-
-                <!-- javascript will dynamically populate this area with the course cards -->
-            </div>
-
-
-
-        </section>
-
-    </main>
-
-    <footer>
-
-        <div class="socials">
-
-            <!-- <a href="" target="_blank"><img src="images/fbk.svg" alt="facebook" width="16" height="16"></a> -->
-
-            <a href="https://github.com/sirdave01/wdd131" target="_blank"><img src="images/github.svg" alt="github"
-                    width="16" height="16"></a>
-
-            <!-- <a href="" target="_blank"><img src="images/instagram.svg" alt="instagram" width="16" height="16"></a> -->
-
-            <a href="www.linkedin.com/in/caleb-osigwe-294085253" target="_blank"><img src="images/linkedin.svg"
-                    alt="linkedin" width="16" height="16"></a>
-
-            <!-- <a href="" target="_blank"><img src="images/microsoft-teams.svg" alt="microsoft-teams" width="16"
-                    height="16"></a> -->
-
-            <!-- <a href="" target="_blank"><img src="images/telegram.svg" alt="telegram" width="16" height="16"></a> -->
-
-            <!-- <a href="" target="_blank"><img src="images/twitter-x.svg" alt="twitter-x" width="16" height="16"></a> -->
-
-            <a href="https://wa.me/+2348178084956" target="_blank"><img src="images/whatsapp.svg" alt="whatsapp"
-                    width="16" height="16"></a>
+        <div id="questions">
+            <ol>
+                <li>Change the given date output to this format: mon dd, year.
+                    <em>Example, Apr 04, 2026</em>
+                </li>
+                <li>Replace this concatenated string using a template literal.</li>
+                <li>Declare a variable named quantity and assign it the value of the HTML input element with an id of
+                    "<code>q</code>" using the <code>querySelector</code> method.</li>
+                <li>Output this string, "Welcome to <mark>our</mark> neighborhood!", to the first
+                    <code>&lt;aside&gt;</code> in the HTML document.</li>
+                <li>Output the returned value of a function named <code>getCelsius</code> to an HTML input element with
+                    an <code>id</code> of "<code>temp</code>". Feed the <code>getCelsius</code> literal value of 33
+                    (which represents 33°F). The <code>getCelsius</code> function is already included in the provided.
+                </li>
+                <li>Select all the div elements in a document and assign the result to a <code>const</code> variable
+                    named "<code>divs</code>" using <code>querySelectorAll</code>. Output to the provided
+                    <code>div</code> element with an <code>id</code> of "<code>divs</code>".</li>
+                <li>Filter an array named <code>citynames</code> to return only city names in the array that start with
+                    the letter "C" and store the resulting array into a variable named <code>filterC</code>. Output to
+                    the provided <code>div</code> element with an <code>id</code> of "<code>c-names</code>".</li>
+            </ol>
 
         </div>
-
-        <p>
-            &copy; <span id="currentyear"></span>
-            Osigwe Uchechukwu DavidCaleb ❤️, Aba, Abia State, Nigeria
-        </p>
-
-        <p><span id="lastModified"></span></p>
-
-    </footer>
-
+        <div id="output">
+            <div id="today1" class="step-reset step"></div>
+            <div id="today2" class="step"></div>
+            <div class="step">
+                <label for="q"><strong>Quantity</strong>: </label>
+                <input type="text" id="q" size="3" value="44">
+            </div>
+            <div class="step">Output to the first aside element at the top.</div>
+            <div class="step">
+                <label for="temp"><strong>Temperature</strong>: </label>
+                <input type="text" size="3" id="temp" readonly>
+            </div>
+            <div id="divs" class="step"></div>
+            <div id="c-names" class="step"></div>
+        </div>
+    </main>
+    <aside></aside>
 </body>
 
 </html>
