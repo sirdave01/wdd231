@@ -49,12 +49,36 @@ section {
     margin-bottom: 10px;
 }
 
-footer {
+footer p{
     text-align: center;
-    font-size: 0.9rem;
     color: #4169e1;
     margin-top: 10px;
     background-color: #ddd;
-    padding: 1rem;
     border-radius: 8px;
+}
+
+@media only screen and (min-width: 38rem){
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+    #cards{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    section{
+        padding: 2rem;
+        margin-bottom: 20px;
+    }
 }
