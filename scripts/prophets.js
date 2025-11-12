@@ -37,9 +37,11 @@ getProphetData();
 // to contain statements that will process the parameter value and build a card for each prophet.
 
 const displayProphets = (prophets) => {
+
     // Use a forEach() method to loop through each prophet object
     // in the prophets array.
     prophets.forEach((prophet) => {
+
         // Create elements to add to the div.cards element
 
         // create a section element and store it in a variable named card using createElement(),
@@ -48,11 +50,21 @@ const displayProphets = (prophets) => {
         // create an h2 element and store it in a variable named "fullName",
         let fullName = document.createElement('h2');
 
+        // create two paragraph elements with variables names "pob" and "dob" for place of birth and date of birth respectively
+
+        let pob = document.createElement('p');
+        let dob = document.createElement('p');
+
         // create an img element and store it in a variable named "portrait",
         let portrait = document.createElement('img');
 
         // populate the heading element with the prophet's full name using a template string to build the full name
         fullName.textContent = `${prophet.name} ${prophet.lastname}`;
+
+        // populate the dob and pob elements with the prophet's date of birth and place of birth respectively
+
+        dob.textContent = `Date of Birth: ${prophet.birthdate}`;
+        pob.textContent = `Place of Birth: ${prophet.birthplace}`;
 
         // build the image element by setting the src, alt, loading, width, and height attributes using setAttribute().
         portrait.setAttribute('src', prophet.imageurl);
@@ -61,8 +73,10 @@ const displayProphets = (prophets) => {
         portrait.setAttribute('width', '340');
         portrait.setAttribute('height', '440');
 
-        // Using appendChild() on the section element named "card", add the heading and image elements one at a time.
+        // Using appendChild() on the section element named "card", add the heading, paragraph and image elements one at a time.
         card.appendChild(fullName);
+        card.appendChild(dob);
+        card.appendChild(pob);
         card.appendChild(portrait);
 
         // Finally, append the section element named "card" to the div element with an id of "cards".
