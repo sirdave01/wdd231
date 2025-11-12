@@ -1,0 +1,23 @@
+{
+    "familyName": "Doe",
+    "DateMovedIn": "2024-06-15",
+    "NumberOfRecords": 10,
+    "VisitedByBishopric": false,
+    "IndividualFamilyData": [
+        {
+            "name": "John Doe",
+            "brithDate": "1990-01-01",
+            "gender": "male"
+        },
+        {
+            "name": "Jane Doe",
+            "brithDate": "1992-02-02",
+            "gender": "female"
+        },
+        {
+            "name": "Jimmy Doe",
+            "brithDate": "2015-03-03",
+            "gender": "male"
+        }
+    ]
+}
