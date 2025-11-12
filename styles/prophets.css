@@ -49,7 +49,7 @@ section {
     margin-bottom: 10px;
 }
 
-footer p{
+footer p {
     text-align: center;
     color: #4169e1;
     margin-top: 10px;
@@ -57,7 +57,15 @@ footer p{
     border-radius: 8px;
 }
 
-@media only screen and (min-width: 38rem){
+@media only screen and (min-width: 38rem) {
+
+    header,
+    main,
+    footer {
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
     h1 {
         font-size: 2rem;
     }
@@ -71,13 +79,13 @@ footer p{
         line-height: 2rem;
     }
 
-    #cards{
+    #cards {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
 
-    section{
+    section {
         padding: 2rem;
         margin-bottom: 20px;
     }
