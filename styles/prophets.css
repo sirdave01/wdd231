@@ -50,11 +50,13 @@ section {
 }
 
 footer p {
+    font-size: 1rem;
     text-align: center;
     color: #4169e1;
     margin-top: 10px;
     background-color: #ddd;
     border-radius: 8px;
+    padding: 1rem;
 }
 
 @media only screen and (min-width: 38rem) {
@@ -88,5 +90,9 @@ footer p {
     section {
         padding: 2rem;
         margin-bottom: 20px;
+    }
+
+    footer p {
+        font-size: 2rem;
     }
 }
