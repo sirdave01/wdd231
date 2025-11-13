@@ -1,0 +1,83 @@
+[
+    {
+        "name": "Wilaburg Centre",
+        "address": "171 Ehi Road, Aba, Abia, Nigeria",
+        "phoneNumber": "+234 703 697 1024",
+        "website": "N/A",
+        "image": "wilaburg_it_icon.png",
+        "membershipLevel": 2,
+        "Info": "IT education provider established in 1988"
+    },
+    {
+        "name": "Webdeves Academy",
+        "address": "56 Azikiwe Road, Beside Union Bank, Aba, Abia, Nigeria",
+        "phoneNumber": "+234 803 898 8532",
+        "website": "N/A",
+        "image": "webdeves_academy_icon.png",
+        "membershipLevel": 1,
+        "Info": "ICT education hub founded in 2017"
+    },
+    {
+        "name": "Lighthouse Surveys and Mapping Consultants",
+        "address": "317/319 Aba Owerri Road, Aba, Abia State, Nigeria",
+        "phoneNumber": "+234 803 749 3777",
+        "website": "N/A",
+        "image": "lighthouse_survey_icon.png",
+        "membershipLevel": 2,
+        "Info": "Professional surveying firm since 2012"
+    },
+    {
+        "name": "House of Dulce",
+        "address": "53 Azikiwe Road, Aba, Abia, Nigeria",
+        "phoneNumber": "+234 803 206 0475",
+        "website": "N/A",
+        "image": "house_of_dulce_event_icon.png",
+        "membershipLevel": 1,
+        "Info": "Event planning and catering service established 2015"
+    },
+    {
+        "name": "Green Care Phytotherapy Industries Ltd",
+        "address": "Road 8 Plot 7/9 Egbelu Umumba Housing, Aba, Abia, Nigeria",
+        "phoneNumber": "+234 803 613 9979",
+        "website": "N/A",
+        "image": "green_care_herbal_icon.png",
+        "membershipLevel": 3,
+        "Info": "Herbal remedies manufacturer since 2012"
+    },
+    {
+        "name": "MotoMedics Automotive Services",
+        "address": "5 Aba-Owerri Road, Aba, Abia State, Nigeria",
+        "phoneNumber": "+234 901 082 6097",
+        "website": "N/A",
+        "image": "motomedics_auto_icon.png",
+        "membershipLevel": 2,
+        "Info": "Auto repair shop offering affordable services"
+    },
+    {
+        "name": "Benjamin Family Initiative",
+        "address": "1st Floor, B.O.I Building, 1 Asa Road, Aba, Abia State, Nigeria",
+        "phoneNumber": "+234 803 709 2886",
+        "website": "N/A",
+        "image": "benjamin_family_tech_icon.png",
+        "membershipLevel": 1,
+        "Info": "Tech skills training NGO empowering women and youth"
+    },
+    {
+        "name": "Tianshi Tiens Aba Abia Office",
+        "address": "40 St. Michaels Rd, Aba, Abia State, Nigeria (2nd Floor Back)",
+        "phoneNumber": "+234 818 249 1776",
+        "website": "tiens.com.ng",
+        "image": "tiens_health_icon.png",
+        "membershipLevel": 2,
+        "Info": "Health and wellness distributor since 2008; focuses on nutrition"
+    },
+    {
+        "name": "Vicmie Corp",
+        "address": "46 Aba-Owerri Rd, Beside MTN Office, Aba, Abia, Nigeria",
+        "phoneNumber": "+234 806 609 5738",
+        "website": "N/A",
+        "image": "vicmie_software_icon.png",
+        "membershipLevel": 1,
+        "Info": "Web and software development firm founded 2018"
+    }
+]
