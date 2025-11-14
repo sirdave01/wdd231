@@ -10,6 +10,9 @@ navButton.addEventListener(`click`, () => {
     navlinks.classList.toggle(`show`);
 })
 
+let allMembers = [];
+let currentView = 'grid';
+
 // creating and eventlistener to dynamically populate the footer of the page's year and last modified date
 
 document.addEventListener(`DOMContentLoaded`, function () {
@@ -29,7 +32,7 @@ document.addEventListener(`DOMContentLoaded`, function () {
 
     if (lastEdited) {
 
-        lastEdited.textContent = `Last Modified: ${document.lastModified().toLocaleString()}`
+        lastEdited.textContent = `Last Modified: ${new Date(document.lastModified).toLocaleString()}`
     }
 })
 
@@ -60,14 +63,26 @@ function initViewSwitch() {
     if (!gridButton || !listButton || !container) return;
 
     gridButton.addEventListener('click', () => {
+        currentView = 'grid';
         gridButton.classList.add('active');
-        container.classList.remove('active');
+        listButton.classList.remove('active');
+        container.classList.add('grid-view');
+        container.classList.remove('list-view');
+        displayMembers();
     });
 
     listButton.addEventListener('click', () => {
+        currentView = 'list';
         listButton.classList.add('active');
-        container.classList.remove('active');
+        gridButton.classList.remove('active');
+        container.classList.add('list-view');
+        container.classList.remove('grid-view');
+        displayMembers();
     });
+
+    // Set initial view
+    gridButton.classList.add('active');
+    container.classList.add('grid-view');
 }
 
 // fetch and render membeer data from JSON file for directory page
@@ -78,11 +93,11 @@ async function loadMembers() {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        const members = await response.json();
-        renderMembers(members);
+        allMembers = await response.json();
+        renderMembers(allMembers);
     } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
-        document.querySelector('.members-container').innerHTML = '<p>Failed to load member data.</p>';
+        document.querySelector('#members-container').innerHTML = '<p>Failed to load member data.</p>';
     }
 }
 
@@ -92,31 +107,60 @@ function renderMembers(members) {
 
     if (!container || !searchInput) return;
 
-    function filterAndDisplayMembers() {
-        const filtered = members.filter(member =>
-            member.name.toLowerCase().includes(searchInput.value.toLowerCase()) ||
-            member.info.toLowerCase().includes(searchInput.value.toLowerCase())
-        );
-        container.innerHTML = filtered.map(member => `
-            <article class="member-card">
-                <img src="${member.image} alt="${member.name} Logo" loading="lazy" onerror="this.src='images/icons/default.png';>
-                <h3>${member.name}</h3>
-                <span class="level-badge">Level ${member.membershipLevel} ${getLevelName(member.membershipLevel)}</span>
-                <p><strong>Address:</strong>${member.address}</p>
-                <p><strong>Phone:</strong> ${member.phoneNumber}</p>
-                <p><strong>Website:</strong> <a href="https://${member.website}" target="_blank" rel="noopener">${member.website}</a></p>
-                <p>${member.Info}</p>
-            </article>
-        `).join('');
-    }
-
     // inital display
-    filterAndDisplayMembers();
+    displayMembers();
 
     // add event listener for search input
     if (searchInput) {
-        searchInput.addEventListener('input', (e) => filterAndDisplayMembers(e.target.value));
+        searchInput.addEventListener('input', displayMembers);
     }
+}
+
+function displayMembers() {
+    const container = document.querySelector('#members-container');
+    const searchInput = document.querySelector('#search-input');
+    if (!container || !searchInput) return;
+
+    const filtered = allMembers.filter(member =>
+        member.name.toLowerCase().includes(searchInput.value.toLowerCase()) ||
+        member.Info.toLowerCase().includes(searchInput.value.toLowerCase())
+    );
+
+    container.innerHTML = filtered.map(member => {
+        const websiteHtml = member.website !== 'N/A' ?
+            `<p><strong>Website:</strong> <a href="${member.website.startsWith('http') ? member.website : 'https://' + member.website}" target="_blank" rel="noopener">${member.website}</a></p>` :
+            '<p><strong>Website:</strong> N/A</p>';
+
+        if (currentView === 'grid') {
+            return `
+                <article class="member-card grid">
+                    <img src="images/${member.image}" alt="${member.name} Logo" loading="lazy" onerror="this.src='images/icons/default.png';">
+                    <h3>${member.name}</h3>
+                    <span class="level-badge">Level ${member.membershipLevel} ${getLevelName(member.membershipLevel)}</span>
+                    <p><strong>Address:</strong> ${member.address}</p>
+                    <p><strong>Phone:</strong> ${member.phoneNumber}</p>
+                    ${websiteHtml}
+                    <p>${member.Info}</p>
+                </article>
+            `;
+        } else {
+            return `
+                <article class="member-card list">
+                    <div class="list-content">
+                        <img src="images/${member.image}" alt="${member.name} Logo" loading="lazy" onerror="this.src='images/icons/default.png';" width="80" height="80" style="flex-shrink: 0;">
+                        <div class="list-details">
+                            <h3>${member.name}</h3>
+                            <span class="level-badge">Level ${member.membershipLevel} ${getLevelName(member.membershipLevel)}</span>
+                            <p><strong>Address:</strong> ${member.address}</p>
+                            <p><strong>Phone:</strong> ${member.phoneNumber}</p>
+                            ${websiteHtml}
+                            <p>${member.Info}</p>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }
+    }).join('');
 }
 
 function getLevelName(membershipLevel) {
@@ -160,7 +204,7 @@ function toggleDarkMode() {
 }
 
 // eventlistener for all the functions to load when the DOM content is fully loaded
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener(`DOMContentLoaded`, () => {
     initDarkMode();
     initViewSwitch();
     loadMembers();
