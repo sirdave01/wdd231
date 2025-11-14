@@ -174,7 +174,7 @@ body.dark-mode .nav-bar a.active {
 
 .view-btn.active {
     background-color: #007bff;
-    color: #fff;
+    color: #0a0a0a;
     border-color: #007bff;
 }
 
