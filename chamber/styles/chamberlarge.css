@@ -1,0 +1,69 @@
+/* chamberlarge.css - Styles for larger screens */
+
+@media screen and (min-width: 768px) {
+    /* Header */
+    header {
+        justify-content: flex-start;
+        padding: 1rem 2rem;
+    }
+
+    header span {
+        font-size: 1.5rem;
+    }
+
+    /* Navigation */
+    .nav-bar {
+        display: block; /* Always show on large */
+    }
+
+    .hamburger {
+        display: none; /* Hide hamburger */
+    }
+
+    .nav-bar ul {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .nav-bar li {
+        border: none;
+    }
+
+    .nav-bar a {
+        padding: 0.5rem 1rem;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 3rem 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    /* Members - Grid view */
+    .grid-view {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Multi-column */
+    }
+
+    /* List view on large */
+    .list-view .member-card {
+        gap: 2rem;
+        padding: 1rem 0;
+    }
+
+    .list-view .member-name {
+        font-size: 1.3rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 2rem;
+    }
+}

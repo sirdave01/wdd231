@@ -56,33 +56,27 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
 function initViewSwitch() {
 
-    const gridButton = document.querySelector('#grid-view');
-    const listButton = document.querySelector('#list-view');
+    const gridButton = document.querySelector('#grid');
+    const listButton = document.querySelector('#list');
     const container = document.querySelector(`#members-container`);
 
     if (!gridButton || !listButton || !container) return;
 
-    gridButton.addEventListener('click', () => {
-        currentView = 'grid';
-        gridButton.classList.add('active');
-        listButton.classList.remove('active');
-        container.classList.add('grid-view');
-        container.classList.remove('list-view');
-        displayMembers();
-    });
+    function updateView(view) {
+        currentView = view;
+        gridButton.classList.toggle('active', view === 'grid');
+        listButton.classList.toggle('active', view === 'list');
+        container.classList.toggle('grid-view', view === 'grid');
+        container.classList.toggle('list-view', view === 'list');
+        displayMembers(); // Re-render to apply view-specific HTML
+    }
 
-    listButton.addEventListener('click', () => {
-        currentView = 'list';
-        listButton.classList.add('active');
-        gridButton.classList.remove('active');
-        container.classList.add('list-view');
-        container.classList.remove('grid-view');
-        displayMembers();
-    });
+    gridButton.addEventListener('click', () => updateView('grid'));
+
+    listButton.addEventListener('click', () => updateView('list'));
 
     // Set initial view
-    gridButton.classList.add('active');
-    container.classList.add('grid-view');
+    updateView('grid');
 }
 
 // fetch and render membeer data from JSON file for directory page
@@ -107,7 +101,7 @@ function renderMembers(members) {
 
     if (!container || !searchInput) return;
 
-    // inital display
+    // initial display
     displayMembers();
 
     // add event listener for search input
@@ -127,36 +121,37 @@ function displayMembers() {
     );
 
     container.innerHTML = filtered.map(member => {
+        // Extract year from Info (last 4-digit number or N/A)
+        const yearMatch = member.Info.match(/\d{4}/);
+        const year = yearMatch ? yearMatch[0] : 'N/A';
+
+        // Website handling
+        const websiteUrl = member.website !== 'N/A' ? (member.website.startsWith('http') ? member.website : 'https://' + member.website) : '#';
         const websiteHtml = member.website !== 'N/A' ?
-            `<p><strong>Website:</strong> <a href="${member.website.startsWith('http') ? member.website : 'https://' + member.website}" target="_blank" rel="noopener">${member.website}</a></p>` :
-            '<p><strong>Website:</strong> N/A</p>';
+            `<p class="member-website"><strong>Website:</strong> <a href="${websiteUrl}" target="_blank" rel="noopener">${member.website}</a></p>` :
+            '<p class="member-website"><strong>Website:</strong> N/A</p>';
+
+        // Details link (uses website if available, else dummy) - only for list
+        const detailsHtml = currentView === 'list' ? `<a class="member-details" href="${websiteUrl}">See Details</a>` : '';
 
         if (currentView === 'grid') {
             return `
-                <article class="member-card grid">
-                    <img src="images/${member.image}" alt="${member.name} Logo" loading="lazy" onerror="this.src='images/icons/default.png';">
-                    <h3>${member.name}</h3>
-                    <span class="level-badge">Level ${member.membershipLevel} ${getLevelName(member.membershipLevel)}</span>
-                    <p><strong>Address:</strong> ${member.address}</p>
-                    <p><strong>Phone:</strong> ${member.phoneNumber}</p>
+                <article class="member-card">
+                    <h3 class="member-name">${member.name}</h3>
+                    <span class="member-badge level-badge">Level ${member.membershipLevel} ${getLevelName(member.membershipLevel)}</span>
+                    <p class="member-year">${year}</p>
+                    <p class="member-address"><strong>Address:</strong> ${member.address}</p>
+                    <p class="member-phone"><strong>Phone:</strong> ${member.phoneNumber}</p>
                     ${websiteHtml}
-                    <p>${member.Info}</p>
+                    <p class="member-info">${member.Info}</p>
                 </article>
             `;
         } else {
             return `
-                <article class="member-card list">
-                    <div class="list-content">
-                        <img src="images/${member.image}" alt="${member.name} Logo" loading="lazy" onerror="this.src='images/icons/default.png';" width="80" height="80" style="flex-shrink: 0;">
-                        <div class="list-details">
-                            <h3>${member.name}</h3>
-                            <span class="level-badge">Level ${member.membershipLevel} ${getLevelName(member.membershipLevel)}</span>
-                            <p><strong>Address:</strong> ${member.address}</p>
-                            <p><strong>Phone:</strong> ${member.phoneNumber}</p>
-                            ${websiteHtml}
-                            <p>${member.Info}</p>
-                        </div>
-                    </div>
+                <article class="member-card">
+                    <h3 class="member-name">${member.name}</h3>
+                    <p class="member-year">${year}</p>
+                    ${detailsHtml}
                 </article>
             `;
         }
