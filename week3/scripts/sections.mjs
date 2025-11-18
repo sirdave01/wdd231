@@ -1,6 +1,10 @@
-function setSectionSelection() {
+function setSectionSelection(sections) {
     const sectionSelect = document.querySelector("#sectionNumber");
-    byuiCourse.sections.forEach((section) => {
+
+    // clear existing options, except the first placeholder
+    sectionSelect.innerHTML = '<option value="" disabled selected>Select Section</option>';
+
+    sections.forEach((section) => {
         const option = document.createElement("option");
         option.value = section.sectionNumber;
         option.textContent = `${section.sectionNumber}`;
@@ -8,4 +12,4 @@ function setSectionSelection() {
     });
 }
 
-export function populateSection(sections) { }
+export { setSectionSelection };
