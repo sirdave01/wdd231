@@ -37,13 +37,22 @@
         padding: 0.5rem 1rem;
     }
 
+    .hero{
+        min-height: 400px;
+    }
+
     .hero-overlay h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        white-space: normal;
     }
 
     .hero-overlay {
-        max-width: 60%;
+        max-width: 50%;
+        overflow: hidden;
+    }
 
+    .cta-button{
+        white-space: normal;
     }
 
     .events {
