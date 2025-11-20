@@ -17,6 +17,9 @@
     <link rel="manifest" href="images/icons/site.webmanifest">
     <link rel="icon" href="images/icons/favicon.ico">
 
+    <!-- preload the image to avoid it slacking the webserver -->
+    <link rel="preload" as="image" href="images/aba-business-hero.webp">
+
     <meta property="og:title" content="Aba Chamber Of Commerce | Directory">
     <meta property="og:description"
         content=" Browse our directory of member businesses in Aba, Nigeria. Network with local innovators in tech, health, and more.">
@@ -87,7 +90,7 @@
 
                 <source media="(max-width: 600px)" srcset="images/aba-business-hero.webp">
 
-                <img src="images/aba-business-hero.webp" alt="Aba Chamber Craft" loading="lazy">
+                <img src="images/aba-business-hero.webp" alt="Aba Chamber Craft">
 
             </picture>
 
