@@ -1,6 +1,7 @@
 /* chamberlarge.css - Styles for larger screens */
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 760px) {
+
     /* Header */
     header {
         justify-content: flex-start;
@@ -13,11 +14,13 @@
 
     /* Navigation */
     .nav-bar {
-        display: block; /* Always show on large */
+        display: block;
+        /* Always show on large */
     }
 
     .hamburger {
-        display: none; /* Hide hamburger */
+        display: none;
+        /* Hide hamburger */
     }
 
     .nav-bar ul {
@@ -32,6 +35,56 @@
 
     .nav-bar a {
         padding: 0.5rem 1rem;
+    }
+
+    .hero-overlay h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-overlay {
+        max-width: 60%;
+
+    }
+
+    .events {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+    }
+
+    .event-card {
+        margin-bottom: 0;
+    }
+
+    .weather {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #current-weather {
+        flex: 1;
+    }
+
+    #forecast {
+        flex: 2;
+    }
+
+    .forecast-grid {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .spotlights #spotlight-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .spotlight-card {
+        flex: 1 1 300px;
+        max-width: 300px;
     }
 
     /* Hero */
@@ -49,7 +102,8 @@
 
     /* Members - Grid view */
     .grid-view {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Multi-column */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        /* Multi-column */
     }
 
     /* List view on large */
