@@ -37,10 +37,6 @@
         padding: 0.5rem 1rem;
     }
 
-    .hero{
-        min-height: 400px;
-    }
-
     .hero-overlay h2 {
         font-size: 2rem;
         white-space: normal;
@@ -51,7 +47,7 @@
         overflow: hidden;
     }
 
-    .cta-button{
+    .cta-button {
         white-space: normal;
     }
 
@@ -99,6 +95,7 @@
     /* Hero */
     .hero {
         padding: 3rem 2rem;
+        min-height: 400px;
     }
 
     .hero h1 {

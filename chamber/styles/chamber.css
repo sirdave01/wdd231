@@ -136,7 +136,7 @@ body.dark-mode .nav-bar a.active {
 
 /* homepage styling */
 
-.hero {
+.home {
     position: relative;
 
     overflow: hidden;
@@ -476,9 +476,6 @@ body.dark-mode .member-details {
     border-color: #007bff;
 }
 
-body.dark-mode .hero {
-    background-color: #263238;
-}
 
 body.dark-mode .view-btn {
     background-color: #333;
