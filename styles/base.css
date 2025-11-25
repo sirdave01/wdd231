@@ -163,7 +163,7 @@ img {
     background-color: #d4edda;
 }
 
-button{
+button {
     font-family: roboto;
     font-weight: 400;
     font-size: 1rem;
@@ -174,8 +174,29 @@ button:hover {
     background-color: #FFD700;
 }
 
+/* __________________________***Dialog***__________________________________ */
 
+#course-details {
+    background-color: #d4edda;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 85%;
+    max-width: 600px;
+    box-shadow: 0 0 3rem #ddd;
+}
 
+::backdrop {
+    background-color: #ddd;
+}
+
+dialog button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: .5rem 1rem;
+    border: 1px solid #eee;
+}
 
 /* __________________________***FOOTER***__________________________________ */
 

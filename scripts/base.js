@@ -188,6 +188,31 @@ function filterCourses(filterType) {
     displayCourses(currentCourses);
 }
 
+// Write a function to display the modal
+
+function displayCourseDetails(course) {
+    const courseDetails = document.querySelector(`#course-details`);
+    courseDetails.innerHTML = ``;
+
+    courseDetails.innerHTML = `
+    <button id='closeModal'>❌</button>
+    <h2>${course.subject} ${course.number}</h2>
+    <h3>${course.title}</h3>
+    <p><strong>Credits</strong>: ${course.credits}</p>
+    <p><strong>Certificate</strong>: ${course.certificate}</p>
+    <p>${course.description}</p>
+    <p><strong>Technologies</strong>: ${course.technology.join(', ')}</p>`;
+    courseDetails.showModal();
+
+    closeModal.addEventListener("click", () => {
+        courseDetails.close();
+    });
+}
+
+container.addEventListener('click', () => {
+    displayModal(course);
+});
+
 // eventlistener for the buttons
 
 document.addEventListener(`DOMContentLoaded`, () => {
