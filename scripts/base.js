@@ -96,38 +96,31 @@ navButton.addEventListener(`click`, () => {
 
 // creating and eventlistener to dynamically populate the footer of the page's year and last modified date
 
-document.addEventListener(`DOMContentLoaded`, function () {
-
-    // for the current year
-
-    const currentYear = document.querySelector(`#currentyear`);
-
+document.addEventListener('DOMContentLoaded', () => {
+    // Footer current year and last modified
+    const currentYear = document.querySelector('#currentyear');
     if (currentYear) {
-
         currentYear.textContent = new Date().getFullYear();
     }
-
-    // for last modified date
-
-    const lastEdited = document.querySelector(`#lastModified`);
-
+    const lastEdited = document.querySelector('#lastModified');
     if (lastEdited) {
-
-        lastEdited.textContent = `Last Modified: ${new Date().toLocaleString()}`
+        lastEdited.textContent = `Last Modified: ${new Date().toLocaleString()}`;
     }
-})
 
-// wayfinding, creating current class for any active/current page
-
-document.addEventListener(`DOMContentLoaded`, () => {
-
-    const activePage = window.location.pathname.split(`/`).pop() || `index.html`;
-
+    // Wayfinding
+    const activePage = window.location.pathname.split('/').pop() || 'index.html';
+    const links = document.querySelectorAll('#nav-bar a');  // Fixed here
     links.forEach(link => {
-        if (link.getAttribute(`href`) === activePage) {
-            link.classList.add(`current`);
+        if (link.getAttribute('href') === activePage) {
+            link.classList.add('current');
         }
     });
+
+    // Button listeners and initial load
+    document.querySelector('#allCourses').addEventListener('click', () => filterCourses('all'));
+    document.querySelector('#wddCourses').addEventListener('click', () => filterCourses('wdd'));
+    document.querySelector('#cseCourses').addEventListener('click', () => filterCourses('cse'));
+    displayCourses(currentCourses);
 });
 
 // dynamically populating the courses into the HTML course cards
@@ -150,14 +143,12 @@ function displayCourses(coursesToShow) {
 
         card.innerHTML = `
         <h3> ${course.subject}:${course.number}</h3>
-        <p> Credits: ${course.credits} </p>
-        <p> Title: ${course.title} </p>
-        <p> Certificate: ${course.certificate} </p>
-        <p> Description: ${course.description} </p>
-        <p> Technology: ${course.technology} </p>
         <span class="status">${course.completed ? `Completed` : `In Progress`}</span>
         `;
 
+        // adding an eventlistener to help with the display modal function call
+
+        card.addEventListener(`click`, () => displayModal(course));
         container.appendChild(card);
 
     });
@@ -167,7 +158,6 @@ function displayCourses(coursesToShow) {
     const total = coursesToShow.reduce((sum, course) => sum + course.credits, 0);
 
     document.querySelector(`#totalCredits`).textContent = `Total Credits: ${total}`;
-
 
 }
 
@@ -190,7 +180,7 @@ function filterCourses(filterType) {
 
 // Write a function to display the modal
 
-function displayCourseDetails(course) {
+function displayModal(course) {
     const courseDetails = document.querySelector(`#course-details`);
     courseDetails.innerHTML = ``;
 
@@ -204,26 +194,10 @@ function displayCourseDetails(course) {
     <p><strong>Technologies</strong>: ${course.technology.join(', ')}</p>`;
     courseDetails.showModal();
 
+    // const the closemodal variable
+    const closeModal = document.querySelector(`#closeModal`)
+
     closeModal.addEventListener("click", () => {
         courseDetails.close();
     });
 }
-
-container.addEventListener('click', () => {
-    displayModal(course);
-});
-
-// eventlistener for the buttons
-
-document.addEventListener(`DOMContentLoaded`, () => {
-
-    document.querySelector(`#allCourses`).addEventListener(`click`, () => filterCourses(`all`));
-
-    document.querySelector(`#wddCourses`).addEventListener(`click`, () => filterCourses(`wdd`));
-
-    document.querySelector(`#cseCourses`).addEventListener(`click`, () => filterCourses(`cse`));
-
-    // initial load
-    displayCourses(currentCourses);
-
-})

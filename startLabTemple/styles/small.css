@@ -1,2 +1,40 @@
-*{box-sizing: border-box;}
+* {
+    box-sizing: border-box;
+}
 
+* {
+    box-sizing: border-box;
+}
+
+#mydialog div {
+    display: grid;
+    grid-template-columns: auto 44px;
+    border-bottom: 1px solid #eee;
+    background-color: white;
+    padding: 5px;
+}
+
+#showHere {
+    background-color: aqua;
+}
+
+#mydialog {
+    background-color: lavender;
+}
+
+#mydialog Button {
+    background-color: blueviolet;
+}
+
+#mydialog h2 {
+    margin: 0;
+    color: black;
+}
+
+#mydialog p {
+    margin: 0;
+}
+
+::backdrop {
+    background-color: rgba(255, 128, 0, 0.5);
+}

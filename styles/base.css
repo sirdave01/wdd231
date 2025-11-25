@@ -157,6 +157,13 @@ img {
     padding: 1rem;
     background-color: #ddd;
     border-radius: 8px;
+    cursor: pointer;
+}
+
+#courses-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
 }
 
 .completed {
@@ -177,13 +184,12 @@ button:hover {
 /* __________________________***Dialog***__________________________________ */
 
 #course-details {
-    background-color: #d4edda;
+    padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    padding: 1rem;
-    width: 85%;
     max-width: 600px;
-    box-shadow: 0 0 3rem #ddd;
+    margin: auto;
+    background: white;
 }
 
 ::backdrop {
@@ -191,11 +197,11 @@ button:hover {
 }
 
 dialog button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: .5rem 1rem;
-    border: 1px solid #eee;
+    float: right;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
 }
 
 /* __________________________***FOOTER***__________________________________ */
