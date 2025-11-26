@@ -14,6 +14,10 @@ import { initSpotlights } from "./spotlights.mjs";
 
 import { initWeather } from "./weather.mjs";
 
+import { initJoinPage } from "./join.mjs";
+
+import { initThankYou } from "./thanks.mjs";
+
 
 
 
@@ -34,5 +38,13 @@ document.addEventListener(`DOMContentLoaded`, () => {
     }
     if (document.querySelector('.weather, #current-weather')) {
         initWeather();
+    }
+
+    // Join & Thank You pages
+    if (document.querySelector('form') && document.getElementById('timestamp')) {
+        initJoinPage();
+    }
+    if (document.querySelector('.thankyou')) {
+        initThankYou();
     }
 });

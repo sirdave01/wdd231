@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aba Chamber Of Commerce | Directory</title>
+    <meta name="description"
+        content="Browse our directory of member businesses in Aba, Nigeria. Network with local innovators in tech, health, and more.">
+    <meta name="author" content="Osigwe Uchechukwu DavidCaleb">
+    <meta name="keywords" content="Aba business directory, Abia chamber members">
+    <link rel="android-chrome-192x192" href="images/icons/android-chrome-192x192.png">
+    <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
+    <link rel="android-chrome-512x512" href="images/icons/android-chrome-512x512.png">
+    <link rel="favicon-16x16" href="images/icons/favicon-16x16.png">
+    <link rel="favicon-32x32" href="images/icons/favicon-32x32.png">
+    <link rel="manifest" href="images/icons/site.webmanifest">
+    <link rel="icon" href="images/icons/favicon.ico">
+
+    <meta property="og:title" content="Aba Chamber Of Commerce | Directory">
+    <meta property="og:description"
+        content=" Browse our directory of member businesses in Aba, Nigeria. Network with local innovators in tech, health, and more.">
+    <meta property="og:image" content="https://sirdave01.github.io/wdd231/chamber/images/aba-chamber.webp">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sirdave01.github.io/wdd231/chamber/directory.html">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aba Chamber Of Commerce | Directory">
+    <meta name="twitter:description"
+        content="Browse our directory of member businesses in Aba, Nigeria. Network with local innovators in tech, health, and more.">
+    <meta name="twitter:image" content="https://sirdave01.github.io/wdd231/chamber/images/aba-chamber.webp">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/chamber.css">
+    <link rel="stylesheet" href="styles/chamberlarge.css">
+
+    <script type="module" src="scripts/chamber.mjs"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital@1&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+
+        <img src="images/aba-chamber.webp" alt="ACCIMA logo" width="16" height="16">
+
+        <span>
+            Aba Chamber of Commerce, Industry, Mines and Agriculture
+        </span>
+
+        <button id="nav-btn" class="hamburger"></button>
+
+        <button id="dark-mode-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+
+    </header>
+
+    <nav id="nav-list" class="nav-bar">
+
+        <ul>
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="directory.html">Directory</a></li>
+
+            <li><a href="join.html">Join</a></li>
+
+            <li><a href="discover.html">Discover</a></li>
+
+        </ul>
+
+    </nav>
+
+    <main>
+
+        <section class="thanks-page">
+
+            <h1>Thank You for Your Application!</h1>
+
+            <p>We have received your membership application. Here are the details you submitted:</p>
+
+        </section>
+
+        <section id="submitted-data">
+
+            <h2>Application Summary</h2>
+
+            <dl>
+                <dt>First Name:</dt>
+                <dd id="out-firstname"></dd>
+
+                <dt>Last Name:</dt>
+                <dd id="out-lastname"></dd>
+
+                <dt>Email:</dt>
+                <dd id="out-email"></dd>
+
+                <dt>Phone:</dt>
+                <dd id="out-phone"></dd>
+
+                <dt>Business Name:</dt>
+                <dd id="out-businessname"></dd>
+
+                <dt>Membership Level:</dt>
+                <dd id="out-membership"></dd>
+
+                <dt>Application Date:</dt>
+                <dd id="out-timestamp"></dd>
+            </dl>
+
+            <p>We will review your application and contact you soon!</p>
+
+            <a href="index.html" class="btn">Return to Home</a>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div class="socials">
+
+            <a href="https://github.com/sirdave01/wdd131" target="_blank"><img src="images/github.svg" alt="github"
+                    width="16" height="16"></a>
+
+            <a href="https://www.linkedin.com/in/caleb-osigwe-294085253/" target="_blank"><img src="images/linkedin.svg"
+                    alt="linkedin" width="16" height="16"></a>
+
+            <a href="https://wa.me/+2348178084956" target="_blank"><img src="images/whatsapp.svg" alt="whatsapp"
+                    width="16" height="16"></a>
+
+        </div>
+
+        <p>
+            &copy; <span id="currentyear"></span>
+            Osigwe Uchechukwu DavidCaleb | Aba Chamber of Commerce
+        </p>
+
+        <p><span id="lastModified"></span></p>
+
+    </footer>
+
+</body>
+
+</html>

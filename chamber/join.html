@@ -75,13 +75,153 @@
 
     </nav>
 
-    <main>
+    <main class="join-page">
 
-        <section></section>
+        <section id="join-containr">
 
-        <section></section>
+            <h1>Become A Member</h1>
+
+            <form action="thankyou.html" method="get" novalidate>
+
+                <label class="required">
+                    <span>First Name</span>
+                    <input type="text" name="firstname" title="First Name" autocomplete="given-name" required>
+                </label>
+
+                <label class="required">
+                    <span>Last Name</span>
+                    <input type="text" name="lastname" title="Last Name" autocomplete="family-name" required>
+                </label>
+
+                <label>
+                    <span>Position/Title</span>
+                    <input type="text" name="title" title="Organizational Position or Title"
+                        autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}"
+                        title="Title must be at least 7 characters and contain only letters, spaces, or hyphens."
+                        required>
+                </label>
+
+                <label class="required">
+                    <span>Email</span>
+                    <input type="email" name="email" title="Email Address" autocomplete="email"
+                        placeholder="name@example.com" required>
+                </label>
+
+                <label class="required">
+                    <span>Mobile Phone</span>
+                    <input type="tel" name="phone" title="Mobile Phone Number" autocomplete="tel" required>
+                </label>
+
+                <label class="required">
+                    <span>Business/Organization Name</span>
+                    <input type="text" name="businessname" title="Business or Organization Name"
+                        autocomplete="organization" required>
+                </label>
+
+                <label class="required">
+                    <span>Membership Level</span>
+                    <select name="membership" required>
+                        <option value="" disabled selected>Select a membership level</option>
+                        <option value="np">NP Membership (Non-Profit - Free)</option>
+                        <option value="bronze">Bronze Membership</option>
+                        <option value="silver">Silver Membership</option>
+                        <option value="gold">Gold Membership</option>
+                    </select>
+                </label>
+
+                <label>
+                    <span>Business/Organization Description</span>
+                    <textarea name="description" title="Business or Organization Description" rows="5"></textarea>
+                </label>
+
+                <input type="hidden" name="timestamp" id="timestamp">
+
+                <button type="submit" class="submit-btn">Submit Application</button>
+            </form>
+
+        </section>
+
+        <section id="membership-cards" aria-label="Membership level options">
+
+            <div class="card" data-level="np">
+                <h3>NP Membership</h3>
+                <p>For non-profit organizations<br><strong>No Fee</strong></p>
+                <button type="button" class="info-btn" data-modal="modal-np">View Benefits</button>
+            </div>
+
+            <div class="card" data-level="bronze">
+                <h3>Bronze Membership</h3>
+                <p>Great for small businesses</p>
+                <button type="button" class="info-btn" data-modal="modal-bronze">View Benefits</button>
+            </div>
+
+            <div class="card" data-level="silver">
+                <h3>Silver Membership</h3>
+                <p>Enhanced visibility & events</p>
+                <button type="button" class="info-btn" data-modal="modal-silver">View Benefits</button>
+            </div>
+
+            <div class="card" data-level="gold">
+                <h3>Gold Membership</h3>
+                <p>Maximum exposure & benefits</p>
+                <button type="button" class="info-btn" data-modal="modal-gold">View Benefits</button>
+            </div>
+
+        </section>
 
     </main>
+
+    <!-- Modals -->
+    <div class="modal" id="modal-np">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>NP Membership (Free)</h2>
+            <ul>
+                <li>Listing in member directory</li>
+                <li>Invitation to all chamber events</li>
+                <li>Access to member resources</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-bronze">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Bronze Membership</h2>
+            <ul>
+                <li>All NP benefits</li>
+                <li>1 free event registration per year</li>
+                <li>Basic website listing</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-silver">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Silver Membership</h2>
+            <ul>
+                <li>All Bronze benefits</li>
+                <li>Homepage spotlight (1 month/year)</li>
+                <li>20% discount on event fees</li>
+                <li>Featured in newsletter</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-gold">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Gold Membership</h2>
+            <ul>
+                <li>All Silver benefits</li>
+                <li>Homepage spotlight (3 months/year)</li>
+                <li>Free entry to all paid events</li>
+                <li>Top directory placement</li>
+                <li>Annual luncheon with board</li>
+            </ul>
+        </div>
+    </div>
 
     <footer>
 

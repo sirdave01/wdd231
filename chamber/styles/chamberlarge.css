@@ -122,6 +122,51 @@
         font-size: 1.3rem;
     }
 
+
+
+    /* Join Page  */
+    .join-page {
+        display: grid;
+        grid-template-columns: 1fr 380px;
+        gap: 4rem;
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+        align-items: start;
+    }
+
+    .join-container {
+        grid-column: 1;
+    }
+
+    .membership-cards {
+        grid-column: 2;
+        grid-row: 1;
+        margin-top: 0;
+        padding: 0;
+        gap: 1.8rem;
+    }
+
+    .join-container form {
+        max-width: 520px;
+    }
+
+    .join-container input,
+    .join-container select,
+    .join-container textarea {
+        max-width: 480px;
+    }
+
+    .thankyou {
+        padding: 4rem 2rem;
+    }
+
+    .submitted-data {
+        padding: 2.5rem;
+    }
+
+
+
     /* Footer */
     footer {
         padding: 2rem;
