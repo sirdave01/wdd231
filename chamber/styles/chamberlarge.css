@@ -124,14 +124,13 @@
 
 
 
-    /* Join Page  */
+    /* JOIN PAGE */
     .join-page {
         display: grid;
-        grid-template-columns: 1fr 380px;
-        gap: 4rem;
-        max-width: 1240px;
-        margin: 0 auto;
-        padding: 3rem 2rem;
+        grid-template-columns: 1fr 460px;
+        gap: 6rem;
+        padding: 5rem 8%;
+        max-width: 1600px;
         align-items: start;
     }
 
@@ -143,29 +142,34 @@
         grid-column: 2;
         grid-row: 1;
         margin-top: 0;
-        padding: 0;
-        gap: 1.8rem;
+        gap: 3rem;
     }
 
     .join-container form {
-        max-width: 520px;
+        gap: 2.5rem;
     }
 
     .join-container input,
     .join-container select,
     .join-container textarea {
-        max-width: 480px;
+        font-size: 1.2rem;
+        padding: 1.3rem 1.2rem;
     }
 
-    .thankyou {
-        padding: 4rem 2rem;
+    .submit-btn {
+        padding: 1.3rem 4rem;
+        font-size: 1.4rem;
     }
 
-    .submitted-data {
-        padding: 2.5rem;
+    /* Thank You Page */
+    .thanks-page {
+        padding: 6rem 10%;
     }
 
-
+    #submitted-data {
+        padding: 4rem;
+        max-width: 800px;
+    }
 
     /* Footer */
     footer {
