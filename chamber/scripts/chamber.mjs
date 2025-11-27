@@ -44,7 +44,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
     if (document.querySelector('form') && document.getElementById('timestamp')) {
         initJoinPage();
     }
-    if (document.querySelector('.thankyou')) {
+    if (document.querySelector('#submitted-data')) {
         initThankYou();
     }
 });

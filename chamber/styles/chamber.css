@@ -5,7 +5,7 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding: 0;
+    padding: 0.5rem;
     background-color: #ffffff;
     color: #333333;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -271,6 +271,7 @@ body.dark-mode .cta-button:hover {
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
+
 
 .event-card {
     border: 1px solid #ddd;
@@ -618,7 +619,7 @@ body.dark-mode .list-view .member-card {
 /* Join Page */
 .join-page {
     padding: 2rem 5%;
-    max-width: 1400px;
+    max-width: 600px;
     margin: 0 auto;
     background-color: #ffffff;
 }
@@ -643,82 +644,65 @@ body.dark-mode .join-page h1 {
 }
 
 /* Form */
-.join-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    max-width: 100%;
+
+form {
+    margin: 1rem 2%;
+
+    label {
+        display: block;
+        font-size: .8rem;
+        color: purple;
+        padding-top: .2rem;
+    }
+
+    input[type=text],
+    input[type=tel],
+    input[type=date],
+    input[type=email],
+    select,
+    textarea {
+        display: block;
+        margin: .1rem 0 1rem 0;
+        padding: .3rem;
+        border: 1px solid #999;
+        border-radius: 4px;
+        border-left-width: 5px;
+        border-left-color: #555;
+        font-size: 1rem;
+        color: #3D405B;
+        width: 250px;
+    }
+
+
+    input:required {
+        border-left-color: #d70000;
+    }
+
+    input:focus {
+        border-left-color: black;
+        outline: none;
+    }
+
+    input:required:valid {
+        border-left-color: green;
+    }
+
+    input[type=submit] {
+        border: none;
+        text-align: center;
+        background-color: #3D405B;
+        color: white;
+        border-radius: 1rem;
+        padding: .75rem 1.5rem;
+        margin: 2rem 0;
+        font-size: 1.2rem;
+        -webkit-appearance: none;
+        appearance: none;
+    }
 }
 
-.join-container label {
-    display: flex;
-    flex-direction: column;
-    gap: 0.7rem;
-}
-
-.join-container label span {
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: #3D405B;
-}
-
-body.dark-mode .join-container label span {
-    color: #ff8a65;
-}
-
-/* Inputs */
-.join-container input,
-.join-container select,
-.join-container textarea {
-    width: 100%;
-    padding: 1.1rem 1rem;
-    font-size: 1.15rem;
-    border: 2px solid #ccc;
-    border-left: 9px solid #3D405B;
-    border-radius: 10px;
-    background-color: #fff;
-    font-family: 'Roboto', sans-serif;
-    transition: all 0.3s ease;
-}
-
-body.dark-mode .join-container input,
-body.dark-mode .join-container select,
-body.dark-mode .join-container textarea {
-    background-color: #1e1e1e;
-    border-color: #555;
-    color: #e0e0e0;
-}
-
-.join-container input:focus,
-.join-container select:focus,
-.join-container textarea:focus {
-    outline: none;
-    border-left-color: #E07A5F;
-    box-shadow: 0 0 0 5px rgba(224, 122, 95, 0.25);
-}
-
-.join-container input:required { border-left-color: #d70000; }
-.join-container input:required:valid { border-left-color: #2e8b57; }
-
-.join-container textarea {
-    min-height: 160px;
-    resize: vertical;
-}
-
-.submit-btn {
-    align-self: flex-start;
-    margin-top: 1.5rem;
-    padding: 1.1rem 3.5rem;
-    font-size: 1.3rem;
-    font-weight: bold;
-    background-color: #E07A5F;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    min-height: 60px;
-    box-shadow: 0 6px 20px rgba(224, 122, 95, 0.4);
-    transition: all 0.3s ease;
+input:-webkit-autofill {
+    -webkit-text-fill-color: #3D405B;
 }
 
 .submit-btn:hover {
@@ -748,7 +732,7 @@ body.dark-mode .submit-btn:hover {
     padding: 2.5rem 2rem;
     border-radius: 18px;
     text-align: center;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
     border: 3px solid #f0f0f0;
     transition: transform 0.4s ease;
 }
@@ -802,16 +786,20 @@ body.dark-mode .info-btn:hover {
 .modal {
     display: none;
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.75);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
     align-items: center;
     justify-content: center;
     z-index: 1000;
     padding: 1rem;
 }
 
-.modal.show { display: flex; }
+.modal.show {
+    display: flex;
+}
 
 .modal-content {
     background: #fff;
@@ -819,7 +807,7 @@ body.dark-mode .info-btn:hover {
     border-radius: 20px;
     max-width: 540px;
     width: 100%;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
 .modal-content h2 {
