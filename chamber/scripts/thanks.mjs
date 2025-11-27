@@ -11,7 +11,8 @@ function initThankYou() {
     <p><strong>Phone:</strong> ${allInfo.get(`phone`)}</p>
     <p><strong>Business Name:</strong> ${allInfo.get(`businessname`)}</p>
     <p><strong>Membership level of:</strong> ${allInfo.get(`membership`)}</p>
-    <p><strong>Business Description:</strong> ${allInfo.get(`description`)}</p>`
+    <p><strong>Business Description:</strong> ${allInfo.get(`description`)}</p>
+    <p><Form SUbmission Time:</strong> ${allInfo.get(`timestamp`)}</p>`
 }
 
 export { initThankYou };
