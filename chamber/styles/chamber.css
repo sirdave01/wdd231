@@ -16,6 +16,7 @@ h2,
 h3 {
     font-family: 'Lora', serif;
     margin: 0.5rem 0;
+    font-size: 1rem;
 }
 
 /* Dark mode overrides */
@@ -205,7 +206,6 @@ body.dark-mode .nav-bar a.active {
 }
 
 .hero-overlay h2 {
-    font-size: 1rem;
 
     margin: 0;
 
@@ -912,6 +912,89 @@ body.dark-mode #submitted-data dd {
 body.dark-mode .btn {
     background-color: #81d4fa;
     color: #121212;
+}
+
+/* Discover Page */
+
+.discover-grid article {
+    display: grid;
+    margin: 1rem 8px;
+    border: 1px solid #999;
+    border-radius: 8px;
+    overflow: hidden;
+
+    grid-template-areas:
+
+        "heading"
+        "photo"
+        "information"
+        "location"
+        "more";
+}
+
+.discover-grid h2 {
+    margin: 1rem 10px;
+    grid-area: heading;
+}
+
+.discover-grid address {
+    margin: 1rem 10px;
+    grid-area: location;
+}
+
+.discover-grid p {
+    margin: 1rem 10px;
+    grid-area: information;
+}
+
+.discover-grid button {
+    margin: 1rem 10px;
+    grid-area: more;
+    cursor: pointer;
+}
+
+.discover-grid figure {
+    margin: 1rem 10px;
+    grid-area: photo;
+}
+
+.discover-grid img {
+    width: 100%;
+    grid-area: photo;
+    opacity: 0;
+    transition: opacity 1.2s ease-out;
+}
+
+.discover-grid img[loading="lazy"] {
+    opacity: 0;
+}
+
+.discover-grid img[loading="lazy"]:where(.loaded) {
+    opacity: 1;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.discover-grid button:hover {
+    background: #E07A5F;
+}
+
+#visit-message {
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 1px solid #999;
 }
 
 /* Footer */

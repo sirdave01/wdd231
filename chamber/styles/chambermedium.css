@@ -1,0 +1,37 @@
+@media screen and (min-width: 40.1rem) {
+
+    .discover-grid article {
+        grid-template-columns: 280px 1fr;   /* Image fixed, text flexible */
+        grid-template-areas:
+            "photo heading"
+            "photo location"
+            "photo information"
+            "photo more";
+        gap: 0 1.5rem;
+        align-items: start;
+    }
+
+    .discover-grid img {
+        width: 280px;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 8px 0 0 8px;
+    }
+
+    .discover-grid h2,
+    .discover-grid address,
+    .discover-grid p,
+    .discover-grid button {
+        margin: 0.4rem 0;
+    }
+
+    .discover-grid h2 {
+        margin-top: 0;
+        font-size: 1.4rem;
+    }
+
+    .discover-grid button {
+        margin-top: 1rem;
+    }
+
+}

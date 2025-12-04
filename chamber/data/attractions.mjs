@@ -8,13 +8,13 @@ export const attractions = [
     {
         "name": "Ariaria International Market",
         "description": "As one of the largest markets in West Africa, Ariaria International Market is renowned for its vibrant handicrafts, textiles, footwear, and imitation goods. It's a bustling hub where visitors can experience the entrepreneurial spirit of Aba and shop for unique local products.",
-        "address": "Ariaria Road, Aba, Abia State, Nigeria",
+        "address": "140 Faulks Road, Aba, Abia State, Nigeria",
         "image": "ariaria.webp"
     },
     {
         "name": "Enyimba International Stadium",
         "description": "Home to Nigeria's most successful football club, Enyimba International F.C., this multi-use stadium is the pride of Aba. With a capacity for thrilling matches and events, it's a must-visit for sports enthusiasts and a symbol of local passion for football.",
-        "address": "Aba-Owerri Road, Aba, Abia State, Nigeria",
+        "address": "222 Clifford Road, Aba, Abia State, Nigeria",
         "image": "enyimba.webp"
     },
     {
@@ -38,7 +38,7 @@ export const attractions = [
     {
         "name": "Abia State Polytechnic",
         "description": "Abia State Polytechnic is a key educational institution fostering technical and vocational skills. The campus offers a glimpse into student life and innovation in Aba, with opportunities to explore its facilities and learn about local higher education.",
-        "address": "Ogbor Hill, Aba, Abia State, Nigeria",
+        "address": "Brass, Aba, Abia State, Nigeria",
         "image": "abiapoly.webp"
     },
     {

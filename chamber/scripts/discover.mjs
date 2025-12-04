@@ -29,7 +29,7 @@ export function initDiscover() {
     attractions.forEach((attraction) => {
 
         const card = document.createElement("article");
-        
+
         card.className = "discover-card";
 
         card.innerHTML = `
@@ -46,5 +46,13 @@ export function initDiscover() {
         `;
 
         grid.appendChild(card);
+    });
+
+    document.querySelectorAll('.discover-grid img[loading="lazy"]').forEach(img => {
+        if (img.complete && img.naturalWidth > 0) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', () => img.classList.add('loaded'));
+        }
     });
 }
