@@ -18,6 +18,8 @@ import { initJoinPage } from "./join.mjs";
 
 import { initThankYou } from "./thanks.mjs";
 
+import { initDiscover } from "./discover.mjs";
+
 
 
 
@@ -28,6 +30,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
     initDarkMode();
     initFooterDate();
     initWayFinding();
+    initDiscover();
 
     // Page-specific — safe to load on pages using their container id
     if (document.querySelector('#members-container')) {
