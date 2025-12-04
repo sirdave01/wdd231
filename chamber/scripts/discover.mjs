@@ -35,9 +35,9 @@ export function initDiscover() {
         card.innerHTML = `
             <h2>${attraction.name}</h2>
             <figure>
-                <img src="images/discover/${attraction.image}" 
+                <img src="images/${attraction.image}" 
                      alt="${attraction.name}" 
-                     loading="lazy" 
+                     loading="lazy"
                      width="300" height="200">
             </figure>
             <address>${attraction.address}</address>

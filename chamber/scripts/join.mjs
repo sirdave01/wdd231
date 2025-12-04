@@ -1,4 +1,3 @@
-// scripts/join.mjs
 // Handles timestamp, card animation on load, and membership modals
 
 function initJoinPage() {
