@@ -91,23 +91,43 @@
 
         <section class="card contact-section">
 
-            <form action="https://formspree.io/f/xkgqvvna">
+            <h2>Contact Us</h2>
+
+            <form method="get" action="submitted.html">
 
                 <fieldset>
 
                     <legend>Personal Information (required)</legend>
 
+                    <label>Full Name:<input type="text" name="fullname" required autocomplete="fullname"
+                            title="Your fullname" placeholder="John Doe"></label>
+
+                    <label>Email:<input type="text" name="fullname" required autocomplete="email" title="Your email"
+                            placeholder="johndoe360@mail.com"></label>
+
                 </fieldset>
 
                 <fieldset>
 
-                    <legend>Select an option (required) </legend>
+                    <legend>Select an option for contacting (Please, select One or all that apply) </legend>
+
+                    <label><input type="checkbox" value="yes" name="freelancing">Freelancing</label>
+
+                    <label><input type="checkbox" value="yes" name="inquiries">Inquiries</label>
+
+                    <label><input type="checkbox" value="yes" name="partnership">Partnership</label>
+
+                    <label><input type="checkbox" value="yes" name="enroll-for-training">Enroll for Training</label>
+
 
                 </fieldset>
 
                 <fieldset>
 
                     <legend> Send Us Your Message </legend>
+
+                    <label for="message">Enter your message please</label>
+                    <textarea name="message"></textarea>
 
                 </fieldset>
 
@@ -117,7 +137,12 @@
 
         </section>
 
-        <aside class="card contact-aside"></aside>
+        <aside class="card contact-aside">
+
+            <h2> Visit us via:</h2>
+
+            
+        </aside>
 
     </main>
 
