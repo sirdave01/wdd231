@@ -14,6 +14,7 @@ import { initWeather } from "./weather.mjs";
 
 import { initLiveClock } from "./liveclock.mjs";
 
+import { initCrypto } from "./cryptoexchangerate.mjs";
 // event listener to load the initThankYou function when the DOM content is fully loaded
 document.addEventListener(`DOMContentLoaded`, () => {
     initThankYou();
@@ -25,5 +26,9 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
     if (document.querySelector('.weather, #current-weather')) {
         initWeather();
+    }
+
+    if (document.querySelector(`#crypto-prices`) || document.querySelector(`#usd-ngn`)) {
+        initCrypto();
     }
 });

@@ -47,7 +47,7 @@
     <link rel="stylesheet" href="styles/medium.css">
     <link rel="stylesheet" href="styles/large.css">
 
-    <script type="module" src="scripts/all.mjs"></script>
+    <script type="module" src="./scripts/all.mjs"></script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -133,27 +133,29 @@
             <img src="images/cac_cert_bhts.webp" alt="Certification from CAC" loading="lazy">
         </section>
 
-        <!-- weather section -->
+        <section class="live-data card">
 
-        <section class="weather">
+            <h2>Live Tech Demo</h2>
 
-            <h2> Current Weather in Aba, Abia State, Nigeria</h2>
+            <div class="grid">
 
-            <div id="current-weather">
+                <div id="crypto-prices">
 
-                <p>loading weather...</p>
+                    <p>Loading crypto prices...</p>
 
-            </div>
+                </div>
 
-            <div id="forecast">
+                <div id="usd-ngn" class="card">
 
-                <figure>
+                    <h3>USD → NGN Rate</h3>
 
-                    <img id="weather-icon" src="images/placeholder-icon.png" alt="Weather Icon" loading="lazy">
+                    <p>Loading exchange rate...</p>
 
-                    <figcaption></figcaption>
+                </div>
 
-                </figure>
+                <div id="current-weather" class="card"></div>
+
+                <div id="forecast" class="card"></div>
 
             </div>
 
@@ -222,7 +224,14 @@
 
             <p><span id="lastModified"></span></p>
 
-            <p><a href="attributions.html">Live Tech In Action</a> • <a>YouTube Video</a></p>
+            <p>
+                Live data powered by
+                <a href="https://openweathermap.org" target="_blank" rel="noopener">OpenWeather</a>,
+                <a href="https://coinmarketcap.com" target="_blank" rel="noopener">CMC</a> &
+                <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener">ExchangeRate-API</a>
+            </p>
+
+            <p>• <a>YouTube Video</a></p>
 
         </div>
 
