@@ -3,13 +3,12 @@
 
 export function initThankYou() {
     const userInfo = new URLSearchParams(window.location.search);
-    document.querySelector(`.form-result`).innerHTML = `
-    <p>Email submission from: ${userInfo.get(`fullname`)}</p>
-    <p>User's Email: ${userInfo.get(`email`)}</p>
-    <p>User's choice (freelancing): ${userInfo.get(`freelancing`)}</p>
-    <p>User's choice (inquiries): ${userInfo.get(`inquiries`)}</p>
-    <p>User's choice (partnership): ${userInfo.get(`partnership`)}</p>
-    <p>User's choice (enroll-for-training): ${userInfo.get(`enroll-for-training`)}</p>
-    <p>User's message: ${userInfo.get(`message`)}</p>
-    `
+    const resultEl = document.querySelector('.form-result');
+    if (!resultEl) return;
+
+    let html = '';
+    for (const [key, value] of userInfo.entries()) {
+        html += `<p>${key.charAt(0).toUpperCase() + key.slice(1).replace(/-/g, ' ')}: ${value || 'N/A'}</p>`;
+    }
+    resultEl.innerText = html || '<p>No data submitted.</p>';
 };
