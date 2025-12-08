@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Basic SEO -->
-    <title> Contact – ByteHaven Tech Solutions - Modern Software and Web Solutions</title>
+    <title> ByteHaven Tech Solutions | Contact - Modern Software and Web Solutions</title>
     <meta name="description"
-        content="Official site plan for ByteHaven Tech Solutions Ltd – Professional web development, custom software, tech training, and CAC-certified services in Nigeria.">
+        content="Contact ByteHaven Tech Solutions for web development inquiries, partnerships, or training in Nigeria. Submit your project details today.">
     <meta name="author" content="Osigwe Uchechukwu DavidCaleb">
     <meta name="keywords"
-        content="ByteHaven Tech Solutions, web development Nigeria, custom software development, tech training, CAC certified developer, frontend developer portfolio, WDD 231 project">
+        content="ByteHaven Tech Solutions, web development Nigeria, custom software development Aba, tech training Abia State, CAC certified developer Nigeria, frontend development services, WDD 231 project, digital solutions Nigeria">
 
     <!-- Favicon  -->
     <link rel="icon" href="favicon/favicon.ico" sizes="any">
@@ -23,9 +23,9 @@
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:title" content="ByteHaven Tech Solutions Ltd – Web & Software Development">
     <meta property="og:description"
-        content="CAC-certified web development, custom software, and tech training services in Nigeria.">
+        content="Innovative software development and digital solutions for modern businesses.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sirdave01.github.io/wdd231/finalproject/siteplan.html">
+    <meta property="og:url" content="https://sirdave01.github.io/wdd231/finalproject/contact.html">
     <meta property="og:image" content="https://sirdave01.github.io/wdd231/finalproject/favicon/apple-touch-icon.png">
     <meta property="og:image:width" content="180">
     <meta property="og:image:height" content="180">
@@ -37,7 +37,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ByteHaven Tech Solutions Ltd">
     <meta name="twitter:description"
-        content="CAC-certified web development, custom software & tech training in Nigeria">
+        content="Innovative software development and digital solutions for modern businesses.">
     <meta name="twitter:image" content="https://sirdave01.github.io/wdd231/finalproject/favicon/apple-touch-icon.png">
     <meta name="twitter:image:alt" content="ByteHaven circular logo">
     <meta name="twitter:site" content="@yourhandle">
@@ -54,6 +54,8 @@
 </head>
 
 <body>
+
+    <a href="#main-content" class="skip-link">Skip to main Content</a>
 
     <header>
 
@@ -73,37 +75,37 @@
 
         <ul>
 
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" data-page="index">Home</a></li>
 
-            <li><a href="services.html">Services</a></li>
+            <li><a href="services.html" data-page="services">Services</a></li>
 
-            <li><a href="contact.html">contact</a></li>
+            <li><a class="active" href="contact.html" data-page="contact">Contact</a></li>
 
         </ul>
 
     </nav>
 
-    <main>
+    <main id="main-content">
 
-        <!-- the contact page will have the form with a post method to submitted.html
+        <!-- the contact page will have the form with a get method to submitted.html
          it'll allow users to make inquiries and submit their concerns, request partnership, observations
          and possible freelancing job -->
 
         <section class="card contact-section">
 
-            <h2>Contact Us</h2>
+            <h1>Contact Us</h1>
 
-            <form method="get" action="submitted.html">
+            <form method="get" action="thanks.html">
 
                 <fieldset>
 
                     <legend>Personal Information (required)</legend>
 
-                    <label>Full Name:<input type="text" name="fullname" required autocomplete="fullname"
+                    <label for="fullname">Full Name:<input type="text" name="fullname" required autocomplete="fullname"
                             title="Your fullname" placeholder="John Doe"></label>
 
-                    <label>Email:<input type="text" name="fullname" required autocomplete="email" title="Your email"
-                            placeholder="johndoe360@mail.com"></label>
+                    <label for="email">Email:<input type="text" name="email" required autocomplete="email"
+                            title="Your email" placeholder="johndoe360@mail.com"></label>
 
                 </fieldset>
 
@@ -127,11 +129,11 @@
                     <legend> Send Us Your Message </legend>
 
                     <label for="message">Enter your message please</label>
-                    <textarea name="message"></textarea>
+                    <textarea name="message" rows="5" required placeholder="Tell us about your project..."></textarea>
 
                 </fieldset>
 
-                <input type="submit" value="Contact Us">
+                <input type="submit" value="Send Us Your Message">
 
             </form>
 
@@ -139,7 +141,15 @@
 
         <aside class="card contact-aside">
 
-            <h2> Visit us via:</h2>
+            <h2> About us</h2>
+
+            <p>
+
+                We are a Limited Liability Company - CAC Certified - located in Aba, Abia State, Nigeria, we are your
+                safe haven for your Tech ideas... We birth your beautiful idea(s) into an amazing webapp, website and or
+                software. Birth on the 11th of November, 2025. <span>You're Welcome!</span>
+
+            </p>
 
         </aside>
 
@@ -147,25 +157,69 @@
 
     <footer>
 
-        <div class="socials">
+        <div id="bytehaven-digital">
 
-            <a href="https://github.com/sirdave01/wdd231" target="_blank"><img src="images/github.svg" alt="github"
-                    width="16" height="16"></a>
+            <h3>ByteHaven Tech Solutions</h3>
 
-            <a href="https://www.linkedin.com/in/caleb-osigwe-294085253/" target="_blank"><img src="images/linkedin.svg"
-                    alt="linkedin" width="16" height="16"></a>
+            <p>Your digital safe Space that turns your Tech Problems into Solutions</p>
 
-            <a href="https://wa.me/+2349035677967" target="_blank"><img src="images/whatsapp.svg" alt="whatsapp"
-                    width="16" height="16"></a>
+            <p><img src="images/icons/location.svg"> Aba, Abia State, Nigeria</p>
+
+            <p><img src="images/icons/email.svg"><a
+                    href="mailto:d08178084956@gmail?subject=Inquiry%20Website&body=Hello,%20I%20have%20a%20question%20about..."
+                    target="_blank">Email Us</a>
+            </p>
 
         </div>
 
-        <p>
-            &copy; <span id="currentyear"></span>
-            ByteHaven Tech Solutions Ltd Development Team
-        </p>
+        <div id="quick-links">
 
-        <p><span id="lastModified"></span></p>
+            <h3>Quick Links</h3>
+
+            <ul>
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="services.html">Services</a></li>
+
+                <li><a href="contact.html">contact</a></li>
+
+            </ul>
+
+        </div>
+
+        <div class="socials">
+
+            <h3>Socials</h3>
+
+            <a href="https://github.com/sirdave01/wdd231" target="_blank"><img src="images/github.svg" alt="github"
+                    width="16" height="16" loading="lazy"></a>
+
+            <a href="https://www.linkedin.com/in/caleb-osigwe-294085253/" target="_blank"><img src="images/linkedin.svg"
+                    alt="linkedin" width="16" height="16" loading="lazy"></a>
+
+            <a href="https://wa.me/+2349035677967" target="_blank"><img src="images/whatsapp.svg" alt="whatsapp"
+                    width="16" height="16" loading="lazy"></a>
+
+        </div>
+
+        <hr>
+
+        <div id="live-clock"></div>
+
+        <div id="year-date">
+
+            <p>
+                &copy; <span id="currentyear"></span>
+                ByteHaven Tech Solutions Ltd Development Team
+            </p>
+
+            <p><span id="lastModified"></span></p>
+
+            <p><a href="attributions.html">Live Tech In Action</a> • <a>YouTube Video</a></p>
+
+        </div>
+
 
     </footer>
 
