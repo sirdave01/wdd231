@@ -1,6 +1,6 @@
 // dark mode toggle functionality
 
-export function initDarkMode() {
+function initDarkMode() {
     const toggleSwitch = document.querySelector('#dark-mode-toggle');
     if (!toggleSwitch) return;
 
@@ -19,6 +19,6 @@ export function initDarkMode() {
 
         toggleSwitch.textContent = newTheme === 'dark' ? '☀️' : '🌙';
     });
+}
 
-    toggleSwitch.setAttribute('aria-pressed', newTheme === 'dark');
-};
+export { initDarkMode };

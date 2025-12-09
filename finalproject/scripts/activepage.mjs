@@ -1,6 +1,6 @@
 // the wayfinding js script that lets users know the active page they're on
 
-export function initWayFinding() {
+function initWayFinding() {
 
     const activePage = window.location.pathname.split(`/`).pop() || `index.html`;
 
@@ -9,4 +9,6 @@ export function initWayFinding() {
             link.classList.add(`active`)
         }
     });
-};
+}
+
+export { initWayFinding };

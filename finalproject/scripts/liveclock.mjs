@@ -1,6 +1,6 @@
 // Writing the live-clock module to populate the liveclock div in the HTML file
 
-export function initLiveClock() {
+function initLiveClock() {
     const clockEl = document.querySelector('#live-clock');
     if (!clockEl) {
         console.warn('Live clock element not found');
@@ -19,4 +19,6 @@ export function initLiveClock() {
 
     updateClock(); // Initial update
     setInterval(updateClock, 1000); // Update every second
-};
+}
+
+export { initLiveClock };

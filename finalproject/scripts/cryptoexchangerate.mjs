@@ -2,14 +2,14 @@
 import { COINMARKETCAP_KEY } from './apis.mjs';
 import { EXCHANGE_RATE_KEY } from './apis.mjs';
 
-export async function initCrypto() {
+async function initCrypto() {
     // Crypto Prices (BTC, ETH, BNB)
     try {
         const res = await fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=3&sort=market_cap', {
             headers: { 'X-CMC_PRO_API_KEY': COINMARKETCAP_KEY }
         });
         const data = await res.json();
-        const pricesDiv = document.getElementById('crypto-prices');
+        const pricesDiv = document.querySelector(`#crypto-prices`);
         if (!pricesDiv) return;
 
         const top3 = data.data.slice(0, 3);
@@ -26,16 +26,18 @@ export async function initCrypto() {
             `).join('')}
         `;
     } catch (e) {
-        document.getElementById('crypto-prices').textContent = 'Crypto unavailable';
+        document.querySelector(`#crypto-prices`).textContent = 'Crypto unavailable';
     }
 
     // USD → NGN Exchange Rate
     try {
         const rate = await fetch(`https://v6.exchangerate-api.com/v6/${EXCHANGE_RATE_KEY}/latest/USD`)
             .then(r => r.json());
-        document.getElementById('usd-ngn').textContent =
+        document.querySelector(`#usd-ngn`).textContent =
             `1 USD = ${rate.conversion_rates.NGN.toLocaleString()} NGN`;
     } catch (e) {
         document.getElementById('usd-ngn').textContent = 'Rate unavailable';
     }
 }
+
+export { initCrypto };
