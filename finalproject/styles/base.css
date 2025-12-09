@@ -1,0 +1,65 @@
+/* ====================================
+   BASE.CSS – Global styles & variables
+   ==================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+    --navy: #0F172A;
+    --teal: #00D4D4;
+    --light-teal: #5FE9E9;
+    --gray: #E2E8F0;
+    --white: #FFFFFF;
+    --dark-card: #1E293B;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--teal);
+    line-height: 1.2;
+}
+
+a {
+    color: var(--light-teal);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--teal);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    padding: 0 1rem;
+}

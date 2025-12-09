@@ -16,6 +16,10 @@ import { initHamburger } from "./hambutton.mjs";
 
 import { initFooterDate } from "./footer.mjs";
 
+import { initServices } from "./services.mjs";
+
+import { initModals } from "./modals.mjs";
+
 // event listener to load the initThankYou function when the DOM content is fully loaded
 document.addEventListener(`DOMContentLoaded`, () => {
     initLiveClock();
@@ -26,4 +30,6 @@ document.addEventListener(`DOMContentLoaded`, () => {
     initWeather();
     initHamburger();
     initFooterDate();
+    initServices();
+    initModals();
 });

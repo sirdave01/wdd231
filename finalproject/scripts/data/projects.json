@@ -1,0 +1,206 @@
+{
+    "featured": [
+        {
+            "title": "ByteHaven Tech Solutions Website",
+            "desc": "Professional tech services site with responsive design, service listings, contact form, and modern UI.",
+            "tech": [
+                "HTML5",
+                "CSS3",
+                "JavaScript",
+                "Responsive Design"
+            ],
+            "demo": "https://sirdave01.github.io/wdd231/finalproject/index.html",
+            "type": "live"
+        },
+        {
+            "title": "QuickBank PRO – Supermarket POS System",
+            "desc": "Full-featured desktop checkout app with barcode scanning, receipt printing, cash/card payments, daily reports, and inventory.",
+            "tech": [
+                "Python",
+                "Tkinter",
+                "JSON",
+                "File I/O",
+                "GUI"
+            ]
+        },
+        {
+            "title": "EternalQuest Goal Tracker",
+            "desc": "C# console app with OOP, inheritance, polymorphism, file saving/loading, checklist goals with bonus points.",
+            "tech": [
+                "C#",
+                ".NET 8",
+                "OOP",
+                "Inheritance",
+                "File I/O"
+            ]
+        },
+        {
+            "title": "Exercise Tracker (Polymorphism)",
+            "desc": "C# OOP app tracking running, cycling, swimming with distance, speed, pace calculations using inheritance & abstract classes.",
+            "tech": [
+                "C#",
+                "OOP",
+                "Polymorphism",
+                "Abstraction"
+            ]
+        },
+        {
+            "title": "My Church of God Nigeria",
+            "desc": "Fully responsive church website with donation form, gallery, media uploads, contact form, and responsive design.",
+            "tech": [
+                "HTML5",
+                "CSS3",
+                "JavaScript",
+                "Formspree",
+                "Responsive"
+            ],
+            "demo": "https://sirdave01.github.io/wdd131/project/index.html",
+            "type": "live"
+        }
+    ],
+    "allProjects": [
+        {
+            "title": "ByteHaven Tech Solutions Website",
+            "desc": "Professional tech services site with responsive design, service listings, contact form, and modern UI.",
+            "tech": [
+                "HTML5",
+                "CSS3",
+                "JavaScript",
+                "Responsive Design"
+            ],
+            "demo": "https://sirdave01.github.io/wdd231/finalproject/index.html",
+            "type": "live"
+        },
+        {
+            "title": "Tire Volume & Purchase Logger",
+            "desc": "Calculates tire volume from dimensions and logs customer purchases with phone number.",
+            "tech": [
+                "Python",
+                "Math",
+                "Datetime",
+                "File I/O"
+            ]
+        },
+        {
+            "title": "Water Flow Physics Simulator",
+            "desc": "Calculates pressure loss/gain in pipes using real fluid dynamics formulas (Reynolds, viscosity, etc.).",
+            "tech": [
+                "Python",
+                "Physics",
+                "Functions",
+                "Math"
+            ]
+        },
+        {
+            "title": "Chemistry Molar Mass Calculator",
+            "desc": "Parses chemical formulas (e.g., H2O, C6H12O6) and calculates exact molar mass with error handling.",
+            "tech": [
+                "Python",
+                "Parsing",
+                "Dictionaries",
+                "Error Handling"
+            ]
+        },
+        {
+            "title": "Mindfulness Reflection App",
+            "desc": "C# console app with breathing, reflection, and listing activities using timers and prompts.",
+            "tech": [
+                "C#",
+                "Console",
+                "Lists",
+                "Timers"
+            ]
+        },
+        {
+            "title": "Shapes OOP Demo",
+            "desc": "C# polymorphism demo calculating area of Circle, Square, Rectangle using inheritance.",
+            "tech": [
+                "C#",
+                "OOP",
+                "Inheritance",
+                "Virtual Methods"
+            ]
+        },
+        {
+            "title": "Student Lookup System",
+            "desc": "Reads CSV with student I-Numbers and names, allows fast lookup by ID.",
+            "tech": [
+                "Python",
+                "CSV",
+                "Dictionary",
+                "File I/O"
+            ]
+        },
+        {
+            "title": "Manufacturing Box Calculator",
+            "desc": "Calculates minimum boxes needed using math.ceil() for perfect packing.",
+            "tech": [
+                "Python",
+                "Math",
+                "Input Validation"
+            ]
+        },
+        {
+            "title": "Vehicle Fuel Efficiency",
+            "desc": "Converts MPG to L/100km and calculates efficiency from odometer readings.",
+            "tech": [
+                "Python",
+                "Functions",
+                "User Input"
+            ]
+        },
+        {
+            "title": "Heart Rate Zone Calculator",
+            "desc": "Calculates safe heart rate zone (65–85%) based on age.",
+            "tech": [
+                "Python",
+                "Simple Math"
+            ]
+        },
+        {
+            "title": "Tuesday/Wednesday Discount System",
+            "desc": "Applies 10% discount on slow days if subtotal ≥ $50.",
+            "tech": [
+                "Python",
+                "Datetime",
+                "Conditional Logic"
+            ]
+        },
+        {
+            "title": "Can Storage Efficiency",
+            "desc": "Calculates which food can size gives best volume-to-steel ratio.",
+            "tech": [
+                "Python",
+                "Math",
+                "Lists"
+            ]
+        },
+        {
+            "title": "Provinces List Processor",
+            "desc": "Reads Canadian provinces, removes first/last, replaces 'AB' with 'Alberta', counts occurrences.",
+            "tech": [
+                "Python",
+                "Lists",
+                "String Replace"
+            ]
+        },
+        {
+            "title": "Vehicle Dictionary Lookup",
+            "desc": "VIN-based vehicle database with year, make, model, color, engine info.",
+            "tech": [
+                "Python",
+                "Dictionaries",
+                "Lists"
+            ]
+        },
+        {
+            "title": "Cone Volume Calculator",
+            "desc": "Fixes bug in cone volume formula using proper parameters.",
+            "tech": [
+                "Python",
+                "Math",
+                "Functions"
+            ]
+        }
+    ]
+}

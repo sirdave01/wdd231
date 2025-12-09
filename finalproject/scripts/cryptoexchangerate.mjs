@@ -1,78 +1,114 @@
 
 import { EXCHANGE_RATE_KEY } from './apis.mjs';
 
-export async function initCrypto() {
-    // === CRYPTO PRICES (CoinGecko - BTC, ETH, BNB) ===
+const CACHE_KEY = 'cryptoCache';
+const CACHE_DURATION = 60000; // 60 seconds
+
+// Helper: Get cached data with timestamp check
+function getCachedData() {
     try {
-        // Full list of CoinGecko IDs for your coins (comma-separated, lowercase)
-        const allCoinIds = 'bitcoin,ethereum,binancecoin,litecoin,ripple,cardano,solana,polkadot,dogecoin,shiba-inu,tron,wakanda-inu';  // 12 coins — Xvotes skipped (not listed)
-
-        // Batch into groups of 10 (CoinGecko free limit)
-        const batches = [];
-        const idArray = allCoinIds.split(',');
-        for (let i = 0; i < idArray.length; i += 10) {
-            batches.push(idArray.slice(i, i + 10).join(','));
+        const cached = localStorage.getItem(CACHE_KEY);
+        if (!cached) return null;
+        const { data, timestamp } = JSON.parse(cached);
+        if (Date.now() - timestamp < CACHE_DURATION) {
+            return data;
         }
+    } catch (e) {
+        return null;
+    }
+    return null;
+}
 
-        // Fetch each batch and merge data
-        const allData = {};
-        for (const batch of batches) {
-            const response = await fetch(
-                `https://api.coingecko.com/api/v3/simple/price?ids=${batch}&vs_currencies=usd&include_24hr_change=true&include_24hr_vol=true`
-            );
+// Helper: Save to cache
+function setCachedData(data) {
+    try {
+        localStorage.setItem(CACHE_KEY, JSON.stringify({
+            data,
+            timestamp: Date.now()
+        }));
+    } catch (e) {
+        console.warn("Could not cache crypto data");
+    }
+}
 
-            if (!response.ok) throw new Error(`Batch failed: ${response.status}`);
+export async function initCrypto() {
+    const pricesDiv = document.getElementById('crypto-prices');
+    const ratesDiv = document.getElementById('usd-ngn');
 
-            const batchData = await response.json();
-            Object.assign(allData, batchData);
-        }
+    // === COINGECKO: Use single request + caching ===
+    const coinIds = 'bitcoin,ethereum,binancecoin,litecoin,ripple,cardano,solana,polkadot,dogecoin,shiba-inu,tron,wakanda-inu';
+    const url = `https://api.coingecko.com/api/v3/simple/price?ids=${coinIds}&vs_currencies=usd&include_24hr_change=true`;
 
-        const pricesDiv = document.getElementById('crypto-prices');
-        let html = '<h3>Top Crypto Live Prices (CoinGecko)</h3>';
+    const coinMap = [
+        { id: 'bitcoin', name: 'Bitcoin', symbol: 'BTC' },
+        { id: 'ethereum', name: 'Ethereum', symbol: 'ETH' },
+        { id: 'binancecoin', name: 'BNB', symbol: 'BNB' },
+        { id: 'litecoin', name: 'Litecoin', symbol: 'LTC' },
+        { id: 'ripple', name: 'Ripple', symbol: 'XRP' },
+        { id: 'cardano', name: 'Cardano', symbol: 'ADA' },
+        { id: 'solana', name: 'Solana', symbol: 'SOL' },
+        { id: 'polkadot', name: 'Polkadot', symbol: 'DOT' },
+        { id: 'dogecoin', name: 'Dogecoin', symbol: 'DOGE' },
+        { id: 'shiba-inu', name: 'Shiba Inu', symbol: 'SHIB' },
+        { id: 'tron', name: 'Tron', symbol: 'TRX' },
+        { id: 'wakanda-inu', name: 'Wakanda Inu', symbol: 'WKD' }
+    ];
 
-        // Your coinMap (updated Wakanda Inu ID; commented Xvotes)
-        const coinMap = [
-            { id: 'bitcoin', name: 'Bitcoin', symbol: 'BTC' },
-            { id: 'ethereum', name: 'Ethereum', symbol: 'ETH' },
-            { id: 'binancecoin', name: 'BNB', symbol: 'BNB' },
-            { id: 'litecoin', name: 'Litecoin', symbol: 'LTC' },
-            { id: 'ripple', name: 'Ripple', symbol: 'XRP' },
-            { id: 'cardano', name: `Cardano`, symbol: `ADA` },
-            { id: 'solana', name: `Solana`, symbol: `SOL` },
-            { id: 'polkadot', name: `Polkadot`, symbol: `DOT` },
-            { id: 'dogecoin', name: `Dogecoin`, symbol: `DOGE` },
-            { id: 'shiba-inu', name: `Shiba Inu`, symbol: `SHIB` },
-            // { id: 'Xvotes', name: `Xvotes`, symbol: `XVT` },  // Skipped: Not on CoinGecko (use 'votes' if you want the inactive one)
-            { id: 'tron', name: `Tron`, symbol: `TRX` },
-            { id: 'wakanda-inu', name: 'Wakanda Inu', symbol: 'WKD' }  // Fixed ID
-        ];
+    async function updateCryptoPrices() {
+        let data = getCachedData();
 
-        coinMap.forEach(coin => {
-            if (!allData[coin.id]) {
-                console.warn(`No data for ${coin.name} — skipping`);
-                return;  // Skip gracefully if no data
+        // Try to fetch fresh data
+        try {
+            const res = await fetch(url, {
+                headers: { 'accept': 'application/json' }
+            });
+
+            if (res.ok) {
+                data = await res.json();
+                setCachedData(data);
+                pricesDiv.innerHTML = '<small>Live prices (updated just now)</small>';
+            } else if (res.status === 429) {
+                pricesDiv.innerHTML = '<small>Rate limited – showing cached prices</small>';
+            } else {
+                throw new Error(`HTTP ${res.status}`);
             }
+        } catch (err) {
+            console.warn('Crypto fetch failed:', err.message);
+            if (!data) {
+                pricesDiv.innerHTML = '<p>Live prices temporarily unavailable</p>';
+                return;
+            } else {
+                pricesDiv.innerHTML = '<small>Using cached prices (refresh in a minute)</small>';
+            }
+        }
 
-            const price = allData[coin.id].usd;
-            const change = allData[coin.id].usd_24h_change || 0;
-            const changeColor = change > 0 ? 'lime' : 'red';
+        // Render prices (from fresh or cache)
+        let html = '<h3>Top Crypto Live Prices</h3>';
+        coinMap.forEach(coin => {
+            const info = data[coin.id];
+            if (!info) return;
+
+            const price = info.usd;
+            const change = info.usd_24h_change || 0;
+            const color = change > 0 ? 'lime' : 'red';
             const arrow = change > 0 ? '↑' : '↓';
 
             html += `
-            <div class="crypto-item">
-                <strong>${coin.name} (${coin.symbol})</strong><br>
-                $${price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                <small style="color: ${changeColor};">${arrow} ${Math.abs(change).toFixed(2)}%</small>
-            </div>
-        `;
+                <div class="crypto-item">
+                    <strong>${coin.name} (${coin.symbol})</strong><br>
+                    $${price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 6 })}
+                    <small style="color:${color}">${arrow} ${Math.abs(change).toFixed(2)}%</small>
+                </div>`;
         });
 
         pricesDiv.innerHTML = html;
-
-    } catch (error) {
-        console.error('CoinGecko fetch error:', error);
-        document.getElementById('crypto-prices').innerHTML = '<p>Live crypto prices temporarily unavailable</p>';
     }
+
+    // Initial load
+    await updateCryptoPrices();
+
+    // Update every 60 seconds
+    setInterval(updateCryptoPrices, 60000);
 
     // === Multi-Currency Exchange Rates (USD base) ===
     try {

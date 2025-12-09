@@ -1,0 +1,12 @@
+body:not(.dark-mode) {
+    --navy: #F8FAFC;
+    --dark-card: #FFFFFF;
+    --white: #0F172A;
+    --gray: #64748B;
+    background: #F8FAFC;
+    color: #0F172A;
+}
+
+body:not(.dark-mode) .project-card {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
