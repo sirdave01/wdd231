@@ -1,5 +1,5 @@
 /* ====================================
-   BASE.CSS – Global styles & variables
+   BASE.CSS – small screen styles
    ==================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
@@ -14,6 +14,8 @@
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     --radius: 12px;
     --transition: all 0.3s ease;
+    --bodyFont: 'Inter', sans-serif;
+    --headingFont: 'Space Grotesk', sans-serif;
 }
 
 *,
@@ -24,42 +26,201 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background: var(--navy);
-    color: var(--white);
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: -99;
+    background: #000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-family: var(--body-font);
+    font-size: 1rem;
 }
 
-h1,
-h2,
-h3,
-h4 {
-    font-family: 'Space Grotesk', sans-serif;
+.skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    z-index: 1000;
+    border: 2px solid #fff;
+    border-radius: 4px;
+}
+
+body {
+    margin: 0;
+    padding: 0.7rem;
+    font-family: var(--bodyFont);
+    background-color: var(--navy);
+    color: var(--gray);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    background-color: var(--gray);
+    color: var(--dark-card);
+}
+
+body.dark-mode a {
+    color: var(--navy);
+}
+
+body.dark-mode a:hover,
+body.dark-mode a:focus {
     color: var(--teal);
-    line-height: 1.2;
+}
+
+body.dark-mode .hamburger {
+    color: var(--dark-card);
+}
+
+header,
+nav,
+main,
+footer {
+    width: 80%;
+    max-width: 600px;
+    margin: 0.5rem auto;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+header img {
+    width: 50px;
+    height: auto;
+}
+
+header span {
+    flex: 1;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.hamburger {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--gray);
+}
+
+.hamburger::before {
+    content: "\2630";
+    font-size: 2rem;
+}
+
+.hamburger.show::before {
+    content: "\00D7";
+    font-size: 2rem;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Navigation */
+
+.nav-bar {
+    display: none;
+    background-color: #ffffff;
+}
+
+.nav-bar.show {
+    display: block;
+}
+
+.nav-bar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-bar li {
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-bar a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color: #333;
 }
 
 a {
-    color: var(--light-teal);
+    color: var(--teal);
     text-decoration: none;
     transition: var(--transition);
 }
 
-a:hover {
-    color: var(--teal);
+a:hover,
+a:focus {
+    color: var(--light-teal);
+    outline: none;
 }
 
-img {
-    max-width: 100%;
+.card {
+    background-color: var(--navy);
+    color: var(--gray);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.home-section {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-height: 200px;
+    overflow: hidden;
+}
+
+.hero-section picture {
+    width: 100%;
     display: block;
 }
 
-.container {
-    width: min(90%, 1200px);
-    margin: 0 auto;
-    padding: 0 1rem;
+.hero-section img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    height: auto;
 }
+
+.overlay {
+    position: absolute;
+    top: 65%;
+    left: 63%;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--teal);
+    background-color: var(--navy);
+}
+
+.overlay .cta {
+    display: inline-block;
+    padding: 0.5rem;
+    color: var(--teal);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+

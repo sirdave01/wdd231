@@ -44,10 +44,8 @@
     <meta name="twitter:creator" content="@yourhandle">
 
     <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/components.css">
-    <link rel="stylesheet" href="styles/darkmode.css">
-    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/medium.css">
+    <link rel="stylesheet" href="styles/large.css">
 
     <script type="module" src="scripts/project.mjs"></script>
 
@@ -96,6 +94,8 @@
 
         <section class="card home-section">
 
+            <h1>Home</h1>
+
             <picture>
 
                 <source media="(min-width: 601px)" srcset="images/coding_environment.webp">
@@ -107,16 +107,19 @@
 
             </picture>
 
+            <div class="overlay">
 
-            <div class="about-div">
-
-                <h1>Premium IT & Digital Solutions</h1>
-
-                <p>Transforming businesses with cutting-edge software, cloud expertise, and strategic consulting.</p>
-
-                <button>Get Started</button>
+                <a class="cta" href="services.html">View Our Services</a>
 
             </div>
+
+        </section>
+
+        <section class="card about-div">
+
+            <h2>Premium IT & Digital Solutions</h2>
+
+            <p>Transforming businesses with cutting-edge software, cloud expertise, and strategic consulting.</p>
 
         </section>
 
@@ -129,18 +132,19 @@
             <a href="services.html">Explore All Services</a>
         </section>
 
-        <section>
+        <section class="certifcate card">
 
             <h2>Certification</h2>
 
             <img src="images/cac_cert_bhts.webp" alt="Certification from CAC" loading="lazy">
+
         </section>
 
         <section class="live-data card">
 
             <h2>Live Tech Demo</h2>
 
-            <div class="grid">
+            <div class="grid card">
 
                 <div id="crypto-prices">
 
