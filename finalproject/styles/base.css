@@ -16,6 +16,10 @@
     --transition: all 0.3s ease;
     --bodyFont: 'Inter', sans-serif;
     --headingFont: 'Space Grotesk', sans-serif;
+    --headingfontsize: 1.5rem;
+    --headingfontweight: 600;
+    --bodyfontsize: 1rem;
+    --bodyfontweight: 400;
 }
 
 *,
@@ -24,6 +28,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+}
+
+ul li {
+    list-style: none;
 }
 
 .skip-link {
@@ -53,6 +62,20 @@
     border-radius: 4px;
 }
 
+h1,
+h2,
+h3 {
+    font-size: var(--headingfontsize);
+    font-weight: var(--headingfontweight);
+    text-align: center;
+}
+
+p {
+    font-size: var(--bodyfontsize);
+    font-weight: var(--bodyfontweight);
+    text-align: center;
+}
+
 body {
     margin: 0;
     padding: 0.7rem;
@@ -61,6 +84,8 @@ body {
     color: var(--gray);
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: var(--bodyfontsize);
+    font-weight: var(--bodyfontweight);
 }
 
 body.dark-mode {
@@ -175,7 +200,8 @@ a:focus {
     outline: none;
 }
 
-.card {
+.card,
+div {
     background-color: var(--navy);
     color: var(--gray);
     border-radius: var(--radius);
@@ -187,40 +213,178 @@ a:focus {
 
 .home-section {
     position: relative;
-    margin: 0;
-    padding: 0;
-    min-height: 200px;
+    width: 100%;
+    height: 100vh;
+    min-height: 400px;
     overflow: hidden;
 }
 
 .hero-section picture {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
     display: block;
 }
 
 .hero-section img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
-    height: auto;
 }
 
 .overlay {
     position: absolute;
-    top: 65%;
-    left: 63%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
     border: 1px solid var(--teal);
     background-color: var(--navy);
+    padding: 1rem 2rem;
+    border-radius: 8px;
 }
 
 .overlay .cta {
-    display: inline-block;
-    padding: 0.5rem;
     color: var(--teal);
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: clamp(0.9rem, 2.5vw, 1.5rem);
     text-decoration: none;
     transition: var(--transition);
+    padding: 0;
 }
 
+/* Images with Lazy Loading features */
+
+img {
+    animation: fade 10s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    padding: 3rem 2.5rem;
+    border-radius: 20px;
+    max-width: 540px;
+    width: 100%;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+    font-size: 1.9rem;
+    margin-top: 0;
+}
+
+
+/* styling the form in the contact page */
+.contact-form {
+    margin: 2rem 0;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    padding: 1rem 2%;
+}
+
+.contact-form legend {
+    font-size: var(--bodyfontsize);
+    font-weight: var(--headingfontweight);
+    padding: 0 0.5rem;
+}
+
+.contact-form label {
+    display: block;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    font-weight: var(--bodyfontweight);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    background-color: hsl(0, 18%, 93%);
+    display: block;
+    border: solid #999;
+    border-radius: 6px;
+    padding: 0.75rem;
+    color: hsl(0, 0%, 2%);
+    width: 100%;
+    max-width: 400px;
+    appearance: none;
+}
+
+.contact-form input[type="submit"] {
+    font-size: var(--font-size);
+    font-weight: var(--heading-font-weight);
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem;
+    width: 96%;
+    max-width: 400px;
+    margin: 1rem 2% 2rem 2%;
+    box-shadow: 1px 1px 4px rgba(240, 154, 62, 0.3);
+    cursor: pointer;
+}
+
+.contact-form input:required {
+    border-bottom: solid 8px #cf200e;
+}
+
+#contact-form input:required:valid {
+    border-bottom: solid 8px green;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+footer a {
+    color: var(--teal);
+    text-decoration: none;
+}
+
+#year-date,
+#bytehaven-digital,
+#quick-links,
+#socials {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#socials img {
+    width: 30px;
+    height: auto;
+}
