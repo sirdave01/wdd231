@@ -106,9 +106,21 @@ body.dark-mode .hamburger {
     color: var(--dark-card);
 }
 
+/* LIGHT MODE FOOTER FIX – text becomes visible */
+body.dark-mode footer,
+body.dark-mode footer a,
+body.dark-mode #live-clock,
+body.dark-mode #year-date p {
+    color: var(--white) !important;
+}
+
+body.dark-mode footer a:hover {
+    color: var(--teal) !important;
+}
+
 header,
-nav,
 main,
+nav,
 footer {
     width: 80%;
     margin: 0.5rem auto;
@@ -191,6 +203,7 @@ a {
     color: var(--teal);
     text-decoration: none;
     transition: var(--transition);
+    cursor: pointer;
 }
 
 a:hover,
@@ -208,6 +221,20 @@ div {
     padding: 1rem;
     margin-bottom: 1.5rem;
     overflow: hidden;
+}
+
+.card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 80%;
+    /* Optional: adds a max width for very large screens */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 212, 212, 0.25);
 }
 
 .home-section {
@@ -233,13 +260,13 @@ div {
     z-index: 10;
     text-align: center;
     border: 1px solid var(--teal);
-    background-color: var(--navy);
+
     padding: 1rem 2rem;
     border-radius: 8px;
 }
 
 .overlay .cta {
-    color: var(--teal);
+    color: var(--white);
     font-size: clamp(0.9rem, 2.5vw, 1.5rem);
     text-decoration: none;
     transition: var(--transition);
@@ -351,6 +378,28 @@ img {
     border-bottom: solid 8px green;
 }
 
+/* Clean tech badges — works automatically if your JS uses .tech-badge */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+.tech-badge {
+    display: inline-block;
+    background: rgba(0, 212, 212, 0.15);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    border: 1px solid rgba(0, 212, 212, 0.3);
+    font-weight: 500;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -376,4 +425,20 @@ footer a {
 #socials img {
     width: 30px;
     height: auto;
+}
+
+/* to prevent accidental spacing in small screen */
+
+main {
+    /* mobile = normal flow */
+    display: block;
+}
+
+.about-div,
+.service-section,
+.live-data,
+#all-projects,
+#main-content,
+footer {
+    display: block;
 }

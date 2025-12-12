@@ -30,7 +30,7 @@ export async function initServices() {
                 <h3>${p.title}</h3>
                 <p>${p.desc || ''}</p>
                 <div class="tags">
-                    ${techArray.map(t => `<span class="badge">${t}</span>`).join('')}
+                    ${techArray.map(t => `<span class="tech-badge">${t}</span>`).join('')}
                 </div>
                 <div class="project-links">
                     ${p.demo ? `<a href="${p.demo}" target="_blank" class="btn" onclick="event.stopPropagation()">${p.type === 'live' ? 'View Live' : 'View Demo'}</a>` : ''}
