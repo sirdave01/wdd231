@@ -2,8 +2,6 @@
    BASE.CSS – small screen styles
    ==================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
-
 :root {
     --navy: #0F172A;
     --teal: #00D4D4;
@@ -106,7 +104,7 @@ body.dark-mode .hamburger {
     color: var(--dark-card);
 }
 
-/* LIGHT MODE FOOTER FIX – text becomes visible */
+
 body.dark-mode footer,
 body.dark-mode footer a,
 body.dark-mode #live-clock,
@@ -226,7 +224,6 @@ div {
 .card {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     width: 80%;
-    /* Optional: adds a max width for very large screens */
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
