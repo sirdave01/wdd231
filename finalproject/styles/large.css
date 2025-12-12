@@ -1,0 +1,10 @@
+@media screen and (min-width: 60rem) {
+
+    main,
+    header,
+    footer {
+        width: 70%;
+        height: auto;
+        margin: 0.5rem auto;
+    }
+}

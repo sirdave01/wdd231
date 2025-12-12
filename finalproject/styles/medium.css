@@ -1,0 +1,52 @@
+@media screen and (min-width: 43.75rem) {
+
+    /* Header */
+    header {
+        justify-content: flex-start;
+        padding: 1rem 2rem;
+    }
+
+    header span {
+        font-size: 1.5rem;
+    }
+
+    /* Navigation */
+    .nav-bar {
+        display: block;
+        /* Always show on large */
+    }
+
+    .hamburger {
+        display: none;
+        /* Hide hamburger */
+    }
+
+    .nav-bar ul {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .nav-bar li {
+        border: none;
+    }
+
+    .nav-bar a {
+        padding: 0.5rem 1rem;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .hero-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #ccc;
+    }
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
