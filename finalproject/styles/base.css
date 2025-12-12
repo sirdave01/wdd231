@@ -210,6 +210,11 @@ a:focus {
     outline: none;
 }
 
+.nav-bar a.active {
+    background-color: var(--teal);
+    font-weight: bold;
+}
+
 .card,
 div {
     background-color: var(--navy);
