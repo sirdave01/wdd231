@@ -428,19 +428,3 @@ footer a {
     width: 30px;
     height: auto;
 }
-
-/* to prevent accidental spacing in small screen */
-
-main {
-    /* mobile = normal flow */
-    display: block;
-}
-
-.about-div,
-.service-section,
-.live-data,
-#all-projects,
-#main-content,
-footer {
-    display: block;
-}
