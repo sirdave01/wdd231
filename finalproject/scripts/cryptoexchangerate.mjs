@@ -36,7 +36,7 @@ export async function initCrypto() {
     const ratesDiv = document.getElementById('usd-ngn');
 
     // === COINGECKO: Use single request + caching ===
-    const coinIds = 'bitcoin,ethereum,binancecoin,litecoin,ripple,cardano,solana,polkadot,dogecoin,shiba-inu,tron,wakanda-inu';
+    const coinIds = 'bitcoin,ethereum,binancecoin,litecoin,ripple,cardano,solana,polkadot,dogecoin,shiba-inu,tron,wakanda-inu,pax-gold';
     const url = `https://api.coingecko.com/api/v3/simple/price?ids=${coinIds}&vs_currencies=usd&include_24hr_change=true`;
 
     const coinMap = [
@@ -51,7 +51,8 @@ export async function initCrypto() {
         { id: 'dogecoin', name: 'Dogecoin', symbol: 'DOGE' },
         { id: 'shiba-inu', name: 'Shiba Inu', symbol: 'SHIB' },
         { id: 'tron', name: 'Tron', symbol: 'TRX' },
-        { id: 'wakanda-inu', name: 'Wakanda Inu', symbol: 'WKD' }
+        { id: 'wakanda-inu', name: 'Wakanda Inu', symbol: 'WKD' },
+        { id: 'pax-gold', name: 'Pax Gold', symbol: 'PAXG' }
     ];
 
     async function updateCryptoPrices() {
