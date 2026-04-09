@@ -77,6 +77,20 @@ const courses = [
             'JavaScript'
         ],
         completed: true
+    },
+    {
+        subject: 'WDD',
+        number: 330,
+        title: 'Frontend Web Development II',
+        credits: 3,
+        certificate: 'Web Frontend Development',
+        description: 'This course builds on prior experience with Dynamic Web Fundamentals and programming. Students will focus on user experience, accessibility, compliance, performance optimization, and basic API usage, app development.',
+        technology: [
+            'HTML',
+            'CSS',
+            'JavaScript'
+        ],
+        completed: true
     }
 ]
 
