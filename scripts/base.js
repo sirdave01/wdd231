@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Button listeners and initial load
+    // Button listeners and initial load with filters for the courses modal on the courses page
     document.querySelector('#allCourses').addEventListener('click', () => filterCourses('all'));
     document.querySelector('#wddCourses').addEventListener('click', () => filterCourses('wdd'));
     document.querySelector('#cseCourses').addEventListener('click', () => filterCourses('cse'));
